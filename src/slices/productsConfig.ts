@@ -1,6 +1,5 @@
 import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { IProductConfig } from "models/common";
-import { signOutSuccess } from "./auth";
 import { RootState } from "AppStore";
 import { api, ApiError } from "utils/api";
 import { newErrorModal } from "utils/confirmModalFactory";
@@ -32,9 +31,6 @@ export const productsConfigSlice = createSlice({
       state.items = action.payload;
     },
     getProductsConfigRequested: () => initialState,
-  },
-  extraReducers(builder) {
-    builder.addCase(signOutSuccess, () => initialState);
   },
 });
 

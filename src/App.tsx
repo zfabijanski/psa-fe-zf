@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react";
-import { connect } from "react-redux";
+import { useEffect } from "react";
+import { connect, useStore } from "react-redux";
 import styled, { ThemeProvider } from "styled-components";
 import { Normalize } from "styled-normalize";
 import AppRoutes from "./AppRoutes";
@@ -12,27 +12,21 @@ import FullscreenSpinnerContainer from "./components/UI/FullscreenSpinner/Fullsc
 import { Modal } from "./components/UI/Modal";
 import OneTab from "./features/OneTab/OneTab";
 import I18nProvider from "./I18nProvider";
-import { init } from "./services/init";
+import { useInit } from "./services/init";
 import { initSession } from "./services/login";
-import { getTranslations, Locale, Status } from "slices/translations";
-import { getApiVersion } from "./services/versions";
-import { RootState } from "./AppStore";
+import { Status } from "slices/translations";
+import { RootState, rootReducer } from "./AppStore";
 import GlobalStyles from "./theme/globalStyles";
 import { theme } from "./theme/theme";
 import { IApiError } from "utils/api";
-import {
-  hideFullscreenSpinner,
-  showFullscreenSpinner,
-} from "slices/fullscreenSpinner";
+import { hideFullscreenSpinner } from "slices/fullscreenSpinner";
 import { redirect } from "utils/router";
+import { useSignOutMutation } from "slices/auth";
+import { reloadIfOutdatedVersion } from "utils/version";
 
 interface IProps {
-  getTranslations: (locale: Locale) => void;
   initSession: (onErrorCallback: (error: IApiError) => void) => void;
-  getApiVersion: () => void;
-  showFullscreenSpinner: () => void;
   hideFullscreenSpinner: () => void;
-  init: () => void;
   translationsStatus: Status;
   dictionariesStatus: Status;
 }
@@ -52,29 +46,24 @@ const AppErrorContainer = styled(AppContainer)`
 `;
 
 function App(props: IProps) {
-  const [apiError, setApiError] = useState<IApiError>();
+  const { error, isLoading } = useInit();
+  const { replaceReducer } = useStore<RootState>();
+  const [, { isSuccess }] = useSignOutMutation();
 
   useEffect(() => {
-    props.showFullscreenSpinner();
-    props.getApiVersion();
+    if (isSuccess) {
+      replaceReducer(rootReducer);
+    }
+  }, [replaceReducer, isSuccess]);
 
-    Promise.resolve()
-      .then(() => props.getTranslations(Locale.PL))
-      .then(() => props.initSession(setApiError))
-      .then(() => props.init())
-      .then(() => redirect("/", true))
-      .catch((err) => {
-        const error: IApiError = err?.toJSON?.() ?? err;
-
-        if (error && error.status !== 401) {
-          setApiError(error);
-        }
-      })
-      .finally(() => props.hideFullscreenSpinner());
-
-    // It should mimic componentDidMount
+  useEffect(() => {
+    if (!isLoading) {
+      redirect("/", true);
+      props.hideFullscreenSpinner();
+      reloadIfOutdatedVersion();
+    }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [isLoading]);
 
   return (
     <ThemeProvider theme={theme}>
@@ -82,12 +71,12 @@ function App(props: IProps) {
         <Normalize />
         <GlobalStyles />
 
-        {apiError ? (
+        {error ? (
           <PageLayout>
             <AppErrorContainer>
-              <TypoTitle>{apiError.status}</TypoTitle>
-              <TypoH2>{apiError.message}</TypoH2>
-              <TypoH4>{apiError.uuid}</TypoH4>
+              <TypoTitle>{error.status}</TypoTitle>
+              <TypoH2>{error.message}</TypoH2>
+              <TypoH4>{error.uuid}</TypoH4>
             </AppErrorContainer>
           </PageLayout>
         ) : (
@@ -120,11 +109,7 @@ const mapStateToProps = ({ translations, dictionaries }: RootState) => ({
 });
 
 const mapDispatchToProps = {
-  getTranslations,
-  getApiVersion,
   initSession,
-  init,
-  showFullscreenSpinner,
   hideFullscreenSpinner,
 };
 

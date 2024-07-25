@@ -1,7 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
 import {
-  BrowserRouter,
   Redirect,
   Route,
   RouteChildrenProps,
@@ -28,7 +27,7 @@ import Start from "./features/Start";
 import ProtectedRoute from "./ProtectedRoute";
 import { RootState } from "./AppStore";
 import { Status } from "slices/dictionaries";
-import { browserHistory, memoryHistory } from "./utils/router";
+import { memoryHistory } from "./utils/router";
 
 interface IProps {
   dictionariesStatus: Status;
@@ -40,58 +39,46 @@ const AppRoutes: React.FC<IProps> = (props) => {
     routeComponentProps: RouteChildrenProps<any>
   ): React.ReactNode => {
     const state = routeComponentProps.location.state as Record<string, unknown>;
+
     return !!state && !!state.fromApp ? <Landing /> : <Redirect to="/" />;
   };
 
   return (
-    <BrowserRouter>
-      <Router history={browserHistory}>
-        <Switch>
-          <ProtectedRoute path="/" exact={true}>
-            <Router history={memoryHistory}>
-              {props.dictionariesStatus === Status.Loaded &&
-                props.bopListsStatus === Status.Loaded && (
-                  <Switch>
-                    <ProtectedRoute path="/" exact={true} component={Start} />
-                    <ProtectedRoute path="/calculator" component={Calculator} />
-                    <ProtectedRoute path="/create" component={MeetingStart} />
-                    <ProtectedRoute
-                      path="/history"
-                      component={MeetingHistory}
-                    />
-                    <ProtectedRoute path="/library" component={Library} />
-                    <ProtectedRoute path="/mail" component={Mail} />
-                    <ProtectedRoute path="/meeting" component={Products} />
-                    <ProtectedRoute
-                      path="/adequacy-idd"
-                      component={AdequacyIdd}
-                    />
-                    <ProtectedRoute path="/bop" component={BOP} />
-                    <ProtectedRoute path="/report-bop" component={BopReport} />
-                    <ProtectedRoute path="/apk" component={APK} />
-                    <ProtectedRoute path="/idd" component={IDD} />
-                    <ProtectedRoute path="/report-idd" component={IddReport} />
-                    <ProtectedRoute
-                      path="/about-prudential"
-                      component={AboutPrudential}
-                    />
-                    <ProtectedRoute
-                      path="/business-with-prudential"
-                      component={BusinessWithPrudential}
-                    />
-                    <ProtectedRoute
-                      path="/business-with-prudential-slides"
-                      component={BusinessWithPrudentialSlides}
-                    />
-                  </Switch>
-                )}
-            </Router>
-          </ProtectedRoute>
-          <Route path="/landing" children={renderLandingOrRedirect} />
-          <Redirect to="/" />
-        </Switch>
-      </Router>
-    </BrowserRouter>
+    <Switch>
+      <ProtectedRoute path="/" exact={true}>
+        <Router history={memoryHistory}>
+          <Switch>
+            <ProtectedRoute path="/" exact={true} component={Start} />
+            <ProtectedRoute path="/calculator" component={Calculator} />
+            <ProtectedRoute path="/create" component={MeetingStart} />
+            <ProtectedRoute path="/history" component={MeetingHistory} />
+            <ProtectedRoute path="/library" component={Library} />
+            <ProtectedRoute path="/mail" component={Mail} />
+            <ProtectedRoute path="/meeting" component={Products} />
+            <ProtectedRoute path="/adequacy-idd" component={AdequacyIdd} />
+            <ProtectedRoute path="/bop" component={BOP} />
+            <ProtectedRoute path="/report-bop" component={BopReport} />
+            <ProtectedRoute path="/apk" component={APK} />
+            <ProtectedRoute path="/idd" component={IDD} />
+            <ProtectedRoute path="/report-idd" component={IddReport} />
+            <ProtectedRoute
+              path="/about-prudential"
+              component={AboutPrudential}
+            />
+            <ProtectedRoute
+              path="/business-with-prudential"
+              component={BusinessWithPrudential}
+            />
+            <ProtectedRoute
+              path="/business-with-prudential-slides"
+              component={BusinessWithPrudentialSlides}
+            />
+          </Switch>
+        </Router>
+      </ProtectedRoute>
+      <Route path="/landing" children={renderLandingOrRedirect} />
+      <Redirect to="/" />
+    </Switch>
   );
 };
 

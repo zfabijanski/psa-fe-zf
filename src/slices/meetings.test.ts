@@ -21,7 +21,6 @@ import {
   setCurrentMeetingHaveIdd,
   setCurrentMeetingOutdated,
 } from "./meetings";
-import { signOutSuccess } from "slices/auth";
 import { createMeeting } from "testUtils";
 
 const { reducer: meetings, getInitialState } = meetingsSlice;
@@ -170,13 +169,6 @@ describe("meetings slice", () => {
     expect(meetings(getInitialState(), getMeetingsCountsFailure())).toEqual({
       ...getInitialState(),
       meetingCountsStatus: MeetingCountsStatus.Failure,
-    });
-  });
-
-  it("should handle SignOutSuccess action", () => {
-    expect(meetings(getInitialState(), signOutSuccess())).toEqual({
-      ...getInitialState(),
-      items: [],
     });
   });
 

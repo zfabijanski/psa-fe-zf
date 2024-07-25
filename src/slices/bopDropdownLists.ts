@@ -1,5 +1,4 @@
 import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { signOutSuccess } from "slices/auth";
 import { SelectOption } from "components/UI/Select";
 import { Status } from "slices/dictionaries";
 import { api } from "utils/api";
@@ -52,9 +51,6 @@ export const bopDropdownListsSlice = createSlice({
     addBopDropdownListsFailure(state) {
       state.status = Status.Error;
     },
-  },
-  extraReducers(builder) {
-    builder.addCase(signOutSuccess, () => initialState);
   },
 });
 

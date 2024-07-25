@@ -1,5 +1,5 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import { mapAgentPositionToPositionName } from "../mapper/agent/agent";
+
 import { api } from "../utils/api";
 import { newErrorModal } from "../utils/confirmModalFactory";
 import { redirect } from "../utils/router";
@@ -7,39 +7,35 @@ import {
   hideFullscreenSpinner,
   showFullscreenSpinner,
 } from "slices/fullscreenSpinner";
-import { init } from "../services/init";
 import { showModal } from "slices/modal";
 import {
-  getAgentSuccess,
-  signInFailure,
-  signOutSuccess,
-  IAuthInfo,
+  authApi,
+  LoginState,
+  loginUrl,
+  redirectToAgentPortalLandingPage,
 } from "./auth";
 import { RootState } from "AppStore";
 
-const loginUrl = "/home";
-
 const isTrainEnv = window.location.host.includes("train.");
 
-export const redirectToAgentPortalLandingPage = () => {
-  window.location.pathname = "/home";
-};
+export const redirectAndInformAboutLoginErrors = createAsyncThunk(
+  "auth/redirectAndInformAboutLoginErrors",
+  async () => {
+    redirect("/landing", true);
+    authApi.util.upsertQueryData("init", undefined, {
+      loginState: LoginState.Failure,
+    });
+  }
+);
 
 export const invalidateOtherSessions = createAsyncThunk(
   "auth/invalidateOtherSessions",
   async (_, { dispatch }) => {
     dispatch(showFullscreenSpinner());
-    const config = { headers: { PSAOAuthRenew: true } };
-    api
-      .post("/api/auth/invalidateothersessions", {}, config)
-      .then(() => {
-        // @ts-expect-error
-        return dispatch(init());
-      })
-      .then(() => redirect("/", true))
-      .finally(() => {
-        dispatch(hideFullscreenSpinner());
-      });
+
+    await dispatch(authApi.endpoints.invalidateOtherSessions.initiate());
+
+    window.location.reload();
   }
 );
 
@@ -71,33 +67,16 @@ export const signOut = createAsyncThunk(
   }
 );
 
-export const prolongUserSession = createAsyncThunk(
-  "auth/prolongUserSession",
-  () => api.get("api/auth/prolong")
-);
-
-export const getAgent = createAsyncThunk(
-  "auth/getAgent",
-  async (_, { dispatch }) => {
-    return api
-      .get<IAuthInfo>("/api/auth/agent")
-      .then((agent) => ({
-        ...agent,
-        position: mapAgentPositionToPositionName(agent.brand, agent.position),
-      }))
-      .then((data) => {
-        dispatch(getAgentSuccess(data));
-      });
-  }
-);
-
 export const redirectAndInformIfSessionExpired = createAsyncThunk(
   "auth/redirectAndInformIfSessionExpired",
   async (_, { dispatch, getState }) => {
     const state = getState() as RootState;
     redirect("/landing", true);
-    if (state.auth.info) {
-      dispatch(signOutSuccess());
+
+    const { loginState } = authApi.endpoints.init.select()(state)?.data ?? {};
+    const isLoggedIn = loginState === LoginState.Success;
+
+    if (isLoggedIn) {
       dispatch(
         showModal(
           newErrorModal("login.error.timeout", undefined, () => {
@@ -115,6 +94,8 @@ export const redirectAndInformAboutMultisession = createAsyncThunk(
   "auth/redirectAndInformAboutMultisession",
   async (_, { dispatch }) => {
     redirect("/landing", true);
+
+    dispatch(hideFullscreenSpinner());
     dispatch(
       showModal({
         modalContentTrKey: "login.confirm.sessionOtherDevice",
@@ -130,14 +111,6 @@ export const redirectAndInformAboutMultisession = createAsyncThunk(
         },
       })
     );
-  }
-);
-
-export const redirectAndInformAboutLoginErrors = createAsyncThunk(
-  "auth/redirectAndInformAboutLoginErrors",
-  async (_, { dispatch }) => {
-    redirect("/landing", true);
-    dispatch(signInFailure());
   }
 );
 

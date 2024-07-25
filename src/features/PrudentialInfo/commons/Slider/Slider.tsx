@@ -7,6 +7,7 @@ import { StartSlide } from "slices/businessWithPrudential";
 import { memoryHistory } from "../../../../utils/router";
 import useWindowSize from "../../../../utils/useWindowSize";
 import { ISlideData } from "../types";
+import { useProlongUserSessionMutation } from "slices/auth";
 
 interface IPosition {
   top: number;
@@ -48,17 +49,12 @@ const Slide = styled.div`
 interface IProps {
   slides: ISlideData[];
   startSlide?: StartSlide;
-  prolongUserSession: () => void;
   pageNamePrefix?: string;
 }
 
-const Slider: FC<IProps> = ({
-  prolongUserSession,
-  slides,
-  startSlide,
-  pageNamePrefix,
-}) => {
+const Slider: FC<IProps> = ({ slides, startSlide, pageNamePrefix }) => {
   const [currentSlide, setCurrentSlide] = useState(startSlide || 0);
+  const [prolongUserSession] = useProlongUserSessionMutation();
   const handlePrevButtonClick = () => memoryHistory.goBack();
   const intl = useIntl();
   const [windowHeight, windowWidth] = useWindowSize();

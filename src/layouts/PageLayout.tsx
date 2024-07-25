@@ -4,7 +4,12 @@ import { connect } from "react-redux";
 import { useLocation } from "react-router-dom";
 import styled from "styled-components";
 import Header from "./components/Header/Header";
-import { signOut } from "slices/auth";
+import {
+  LoginState,
+  signOut,
+  useGetAgentQuery,
+  useInitQuery,
+} from "slices/auth";
 import { RootState, useAppDispatch } from "../AppStore";
 import { getCurrentMeetingClientName } from "slices/meetings";
 import { useI18n } from "../utils/i18n";
@@ -35,7 +40,6 @@ interface IProps {
   footer?: PageFooterConfig | ReactElement;
   pageName?: MessageDescriptor["id"];
   clientName: string;
-  agentName: string;
   navigationHidden?: boolean;
 }
 
@@ -43,6 +47,10 @@ const PageLayout: React.FC<PropsWithChildren<IProps>> = (props) => {
   const i18n = useI18n();
   const dispatch = useAppDispatch();
   const { pathname } = useLocation();
+
+  const isLoggedIn = useInitQuery()?.data?.loginState === LoginState.Success;
+  const { fullName: agentName } =
+    useGetAgentQuery(undefined, { skip: !isLoggedIn }).data ?? {};
 
   const handleHomeClick = () => {
     if (pathname === "/") {
@@ -56,7 +64,7 @@ const PageLayout: React.FC<PropsWithChildren<IProps>> = (props) => {
     <PageWrapper>
       <Header
         clientName={props.clientName}
-        agentName={props.agentName}
+        agentName={agentName}
         pageName={props.pageName && i18n.formatMessage({ id: props.pageName })}
         onLogoutClick={() => dispatch(signOut())}
         onHomeClick={handleHomeClick}
@@ -73,12 +81,8 @@ const PageLayout: React.FC<PropsWithChildren<IProps>> = (props) => {
   );
 };
 
-const mapStateToProps = ({ meetings, auth }: RootState) => {
-  const agentName = auth.info
-    ? `${auth.info.givenName} ${auth.info.surname}`
-    : "";
+const mapStateToProps = ({ meetings }: RootState) => {
   return {
-    agentName,
     clientName: getCurrentMeetingClientName(meetings),
   };
 };

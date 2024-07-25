@@ -1,6 +1,5 @@
 import { productCoversLimitsSlice } from "./productCoversLimits";
 import { createProductConfig } from "testUtils";
-import { signOutSuccess } from "slices/auth";
 import {
   getProductsConfigRequested,
   getProductsConfigSuccess,
@@ -37,13 +36,6 @@ describe("productCoversLimits slice", () => {
       items: {
         1234: {},
       },
-    });
-  });
-
-  it("should handle sign out success action", () => {
-    expect(productCoversLimits(getInitialState(), signOutSuccess())).toEqual({
-      loaded: false,
-      items: {},
     });
   });
 });

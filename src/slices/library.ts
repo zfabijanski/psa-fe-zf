@@ -1,6 +1,5 @@
 import { createSlice, createSelector, PayloadAction } from "@reduxjs/toolkit";
 import { KeyValuePair } from "utils/types";
-import { signOutSuccess } from "./auth";
 import { includesLatinised } from "utils/includesLatinised/includesLatinised";
 
 export interface ITreeDto {
@@ -123,9 +122,6 @@ export const librarySlice = createSlice({
     toggleFullscreen: (state) => {
       state.isFullscreenEnabled = !state.isFullscreenEnabled;
     },
-  },
-  extraReducers(builder) {
-    builder.addCase(signOutSuccess, () => initialState);
   },
 });
 

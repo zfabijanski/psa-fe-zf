@@ -6,7 +6,6 @@ import {
   OrderIdType,
 } from "features/Products/types";
 import { CalculationStatus } from "models/calculator";
-import { signOutSuccess } from "./auth";
 import { toValueOrDefault } from "mapper/calculator/dtoToVm";
 import { sortByKey } from "utils/sortByKey";
 import {
@@ -101,9 +100,6 @@ export const illustrationsSlice = createSlice({
     previewIllustration: (state, action: PayloadAction<number>) => {
       state.previewedCalculationId = action.payload;
     },
-  },
-  extraReducers(builder) {
-    builder.addCase(signOutSuccess, () => initialState);
   },
 });
 

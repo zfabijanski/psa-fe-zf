@@ -1,5 +1,4 @@
 import { createFundRiskProfileConfig } from "testUtils";
-import { signOutSuccess } from "slices/auth";
 import { fundRiskProfilesConfigSlice } from "./fundRiskProfilesConfig";
 import { AnyAction } from "@reduxjs/toolkit";
 
@@ -43,15 +42,6 @@ describe("fundRiskProfilesConfig slice", () => {
       loaded: true,
       items: [createFundRiskProfileConfig({ code: "fund_risk_reducer_test" })],
     });
-  });
-
-  it("should handle sign out success action", () => {
-    expect(fundRiskProfilesConfig(getInitialState(), signOutSuccess())).toEqual(
-      {
-        loaded: false,
-        items: [],
-      }
-    );
   });
 
   it("should sort items by risk level", () => {

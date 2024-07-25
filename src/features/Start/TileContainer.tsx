@@ -1,6 +1,6 @@
 import styled from "styled-components/macro";
 import { FormattedMessage } from "react-intl";
-import { Brand } from "slices/auth";
+import { Brand, useGetAgentQuery } from "slices/auth";
 import Tile from "./Tile";
 
 export const StartButtons = styled.div`
@@ -24,7 +24,6 @@ const ColumnTitle = styled.p`
   margin-bottom: 12px;
 `;
 interface IProps {
-  brand?: Brand;
   onNewMeetingClick: () => void;
   onLoadMeetingClick: () => void;
   onLibraryClick: () => void;
@@ -33,6 +32,8 @@ interface IProps {
 }
 
 const Tiles = (props: IProps) => {
+  const { brand } = useGetAgentQuery().data ?? {};
+
   return (
     <StartButtons>
       <Column>
@@ -66,7 +67,7 @@ const Tiles = (props: IProps) => {
           icon="library"
           label={"start.label.library"}
         />
-        {props.brand === Brand.BrandPP && (
+        {brand === Brand.BrandPP && (
           <Tile
             onClick={props.onBusinessClick}
             icon="people"

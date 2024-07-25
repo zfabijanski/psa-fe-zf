@@ -1,6 +1,5 @@
 import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { IFundRiskProfileConfig } from "models/common";
-import { signOutSuccess } from "./auth";
 import { RootState } from "AppStore";
 import {
   hideFullscreenSpinner,
@@ -35,9 +34,6 @@ export const fundRiskProfilesConfigSlice = createSlice({
       state.loaded = true;
       state.items = action.payload.sort((a, b) => b.risk_level - a.risk_level);
     },
-  },
-  extraReducers(builder) {
-    builder.addCase(signOutSuccess, () => initialState);
   },
 });
 
