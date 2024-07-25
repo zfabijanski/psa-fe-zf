@@ -1,21 +1,21 @@
-import React from "react";
-import { connect } from "react-redux";
+import React, { useEffect } from "react";
 import { Route, RouteProps } from "react-router-dom";
-import { RootState } from "./AppStore";
 import { redirect } from "./utils/router";
+import { LoginState, useInitQuery } from "slices/auth";
 
-interface IProps {
-  isAuthenticated: boolean;
-}
+const CustomRedirectToLanding = () => {
+  useEffect(() => {
+    redirect("/landing", true);
+  }, []);
 
-const ProtectedRoute = ({
-  component,
-  children,
-  isAuthenticated,
-  ...rest
-}: IProps & RouteProps) => {
+  return null;
+};
+
+const ProtectedRoute = ({ component, children, ...rest }: RouteProps) => {
+  const { data } = useInitQuery();
+
   const getChildrenAndRender = (): Partial<RouteProps> => {
-    if (isAuthenticated) {
+    if (data?.loginState === LoginState.Success) {
       if (children) {
         return { children };
       } else if (component) {
@@ -25,15 +25,12 @@ const ProtectedRoute = ({
       }
     }
 
-    redirect("/landing", true);
-    return {};
+    return {
+      render: () => <CustomRedirectToLanding />,
+    };
   };
 
   return <Route {...rest} {...getChildrenAndRender()} />;
 };
 
-const mapStateToProps = ({ auth }: RootState) => ({
-  isAuthenticated: !!auth.info,
-});
-
-export default connect(mapStateToProps)(ProtectedRoute);
+export default ProtectedRoute;

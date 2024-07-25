@@ -1,6 +1,5 @@
 import { createSlice, createSelector, PayloadAction } from "@reduxjs/toolkit";
 import { IMeeting } from "features/Meeting/History/types";
-import { signOutSuccess } from "slices/auth";
 import { AdditionalField } from "./mail";
 
 export enum MeetingCountsStatus {
@@ -101,9 +100,6 @@ export const meetingsSlice = createSlice({
     setCurrentMeetingOutdated(state) {
       state.isCurrentMeetingOutdated = true;
     },
-  },
-  extraReducers(builder) {
-    builder.addCase(signOutSuccess, () => initialState);
   },
 });
 

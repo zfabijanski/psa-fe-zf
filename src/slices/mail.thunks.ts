@@ -1,6 +1,6 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import { RootState } from "AppStore";
-import { Brand } from "./auth";
+import { Brand, authApi } from "./auth";
 import {
   hideFullscreenSpinner,
   showFullscreenSpinner,
@@ -131,8 +131,11 @@ export const getSignatureIfNeeded = createAsyncThunk(
     if (state.mail.signature) {
       return;
     }
-    const { info } = state.auth;
-    const brand = info ? info.brand : Brand.BrandPP;
+
+    const brand =
+      (await dispatch(authApi.endpoints.getAgent.initiate()))?.data?.brand ??
+      Brand.BrandPP;
+
     dispatch(showFullscreenSpinner());
     api
       .get<ISignature>("api/footer")

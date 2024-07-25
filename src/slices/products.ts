@@ -9,7 +9,6 @@ import {
   ReportName,
   ReportNameType,
 } from "features/Products/types";
-import { signOutSuccess } from "./auth";
 import {
   hideFullscreenSpinner,
   showFullscreenSpinner,
@@ -80,9 +79,6 @@ export const productsSlice = createSlice({
     setEappProducts: (state, action: PayloadAction<number[]>) => {
       state.eappProducts = action.payload;
     },
-  },
-  extraReducers(builder) {
-    builder.addCase(signOutSuccess, () => initialState);
   },
 });
 

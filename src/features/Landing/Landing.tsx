@@ -1,10 +1,9 @@
 import React from "react";
-import { connect } from "react-redux";
 import styled from "styled-components";
 import Footer from "../../layouts/components/Footer/Footer";
 import ErrorMessage from "../../components/UI/ErrorMessage";
 import PageLayout from "../../layouts/PageLayout";
-import { RootState } from "../../AppStore";
+import { useInitQuery, LoginState } from "slices/auth";
 
 const LandingHeader = styled.p`
   font-size: 28px;
@@ -21,14 +20,17 @@ const CenteredDiv = styled.div`
   margin: 0 auto 10px auto;
 `;
 
-interface IProps {
-  loginFailed: boolean;
-}
+const Landing: React.FC = () => {
+  const { data, isLoading } = useInitQuery();
+  const loginFailure = data?.loginState === LoginState.Failure;
 
-const Landing: React.FC<IProps> = ({ loginFailed }) => {
+  if (isLoading) {
+    return null;
+  }
+
   return (
     <PageLayout footer={<Footer />} navigationHidden={true}>
-      {loginFailed && (
+      {loginFailure && (
         <CenteredDiv>
           <LandingHeader>
             <ErrorMessage message="Nie udało się uruchomić aplikacji. Jeżeli potrzebujesz pomocy skontaktuj się z help-desk pod numerem: 459-595-100." />
@@ -39,8 +41,4 @@ const Landing: React.FC<IProps> = ({ loginFailed }) => {
   );
 };
 
-const mapStateToProps = ({ auth }: RootState) => ({
-  loginFailed: auth.loginFailed,
-});
-
-export default connect(mapStateToProps)(Landing);
+export default Landing;

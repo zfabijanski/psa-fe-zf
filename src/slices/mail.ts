@@ -1,5 +1,4 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { signOutSuccess } from "./auth";
 
 export interface IAttachment {
   id: number;
@@ -162,9 +161,6 @@ export const mailSlice = createSlice({
     toggleShouldSendDocsByMail(state) {
       state.shouldSendDocsByMail = !state.shouldSendDocsByMail;
     },
-  },
-  extraReducers(builder) {
-    builder.addCase(signOutSuccess, () => initialState);
   },
 });
 

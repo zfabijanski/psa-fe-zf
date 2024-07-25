@@ -4,7 +4,6 @@ import {
   getCoversConfigRequested,
   getCoversConfigSuccess,
 } from "./coversConfig";
-import { signOutSuccess } from "slices/auth";
 
 const { reducer: coversConfig, getInitialState } = coversConfigSlice;
 
@@ -43,13 +42,6 @@ describe("coversConfig slice", () => {
           cover_name: "cover_name",
         },
       ],
-    });
-  });
-
-  it("should handle sign out success action", () => {
-    expect(coversConfig(getInitialState(), signOutSuccess())).toEqual({
-      loaded: false,
-      items: [],
     });
   });
 });

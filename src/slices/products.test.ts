@@ -1,6 +1,5 @@
 import { AnyAction } from "@reduxjs/toolkit";
 import { ProductsStatus, productsSlice } from "./products";
-import { signOutSuccess } from "slices/auth";
 
 const {
   actions: {
@@ -76,17 +75,6 @@ describe("products slice", () => {
     expect(products(getInitialState(), setEappProducts([123]))).toEqual({
       ...getInitialState(),
       eappProducts: [123],
-    });
-  });
-
-  it("should handle SignOutSuccess action", () => {
-    expect(
-      products(
-        { ...getInitialState(), status: ProductsStatus.Failure },
-        signOutSuccess()
-      )
-    ).toEqual({
-      ...getInitialState(),
     });
   });
 });

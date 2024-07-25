@@ -1,8 +1,7 @@
 import { connect } from "react-redux";
 import { openModal } from "../../../../../services/apk";
-import { prolongUserSession } from "slices/auth";
 import NeedContainer from "./NeedContainer";
 
-const mapDispatchToProps = { openModal, prolongUserSession };
+const mapDispatchToProps = { openModal };
 
 export default connect(null, mapDispatchToProps)(NeedContainer);
