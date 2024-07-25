@@ -14,25 +14,18 @@ import OneTab from "./features/OneTab/OneTab";
 import I18nProvider from "./I18nProvider";
 import { useInit } from "./services/init";
 import { initSession } from "./services/login";
-import { getTranslations, Locale, Status } from "slices/translations";
-import { getApiVersion } from "./services/versions";
+import { Status } from "slices/translations";
 import { RootState, rootReducer } from "./AppStore";
 import GlobalStyles from "./theme/globalStyles";
 import { theme } from "./theme/theme";
 import { IApiError } from "utils/api";
-import {
-  hideFullscreenSpinner,
-  showFullscreenSpinner,
-} from "slices/fullscreenSpinner";
+import { hideFullscreenSpinner } from "slices/fullscreenSpinner";
 import { redirect } from "utils/router";
 import { useSignOutMutation } from "slices/auth";
 import { reloadIfOutdatedVersion } from "utils/version";
 
 interface IProps {
-  getTranslations: (locale: Locale) => void;
   initSession: (onErrorCallback: (error: IApiError) => void) => void;
-  getApiVersion: () => void;
-  showFullscreenSpinner: () => void;
   hideFullscreenSpinner: () => void;
   translationsStatus: Status;
   dictionariesStatus: Status;
@@ -71,11 +64,6 @@ function App(props: IProps) {
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isLoading]);
-
-  useEffect(() => {
-    props.getTranslations(Locale.PL);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
 
   return (
     <ThemeProvider theme={theme}>
@@ -121,10 +109,7 @@ const mapStateToProps = ({ translations, dictionaries }: RootState) => ({
 });
 
 const mapDispatchToProps = {
-  getTranslations,
-  getApiVersion,
   initSession,
-  showFullscreenSpinner,
   hideFullscreenSpinner,
 };
 

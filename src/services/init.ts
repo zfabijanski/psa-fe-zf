@@ -2,11 +2,13 @@ import { useAppDispatch } from "../AppStore";
 import { useLazyGetVersionQuery } from "../utils/version";
 import { loadDropdownDictionaries } from "slices/bopDropdownLists";
 import { useLazyGetDictionariesQuery } from "slices/dictionaries";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useLazyGetAgentQuery, useInitQuery } from "slices/auth";
 import { IApiError } from "utils/api";
+import { Locale, getTranslations } from "slices/translations";
 
 export const useInit = (): { isLoading?: boolean; error?: IApiError } => {
+  const [isLoading, setIsLoading] = useState(true);
   const dispatch = useAppDispatch();
   const initResponse = useInitQuery();
   const isLoggedIn = initResponse.isSuccess;
@@ -17,19 +19,28 @@ export const useInit = (): { isLoading?: boolean; error?: IApiError } => {
     useLazyGetDictionariesQuery();
 
   useEffect(() => {
-    if (isLoggedIn) {
-      callGetAgent();
-      callGetVersion();
-      callGetDictionaries();
+    async function load() {
+      try {
+        if (isLoggedIn) {
+          await Promise.all([
+            callGetAgent(),
+            callGetVersion(),
+            callGetDictionaries(),
+          ]);
 
-      dispatch(loadDropdownDictionaries());
+          await dispatch(getTranslations(Locale.PL));
+          await dispatch(loadDropdownDictionaries());
+        }
+      } finally {
+        setIsLoading(false);
+      }
+    }
+
+    if (isLoggedIn) {
+      load();
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isLoggedIn]);
-
-  const isLoading = [initResponse, dictionariesResponse, agentResponse].some(
-    (response) => !response.isSuccess
-  );
 
   const responseError = [
     initResponse,
