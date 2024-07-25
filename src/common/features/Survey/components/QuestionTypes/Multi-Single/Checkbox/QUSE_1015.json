@@ -1,0 +1,61 @@
+{
+  "questionnaire_code": "QUSE_1015",
+  "adequacy_version": "2.0.0",
+  "sections_code": "SECTION_B",
+  "sections_value": "DOCHÓD",
+  "question_type_code": "MULTI",
+  "question_data_type_value": "Multi",
+  "answer_type_code": "SINGLE",
+  "answer_type_value": "Single answer",
+  "question_code": "ADQ_QUE_38_1",
+  "question_value": "Jaki jest Twój przybliżony podstawowy, miesięczny dochód netto (objęty ZUS, średnia z ostatnich 6 miesięcy)?",
+  "question_tooltip_code": "QTPC-1001",
+  "question_tooltip_value": "Jeśli osiągasz dochód z wielu źródeł, w dochód podstawowy wpisz sumę dochodu netto ze źródła, z którego opłacasz składki emerytalne i rentowe, a dochód z pozostałych źródeł wpisz w dochody dodatkowe w następnym pytaniu.\nW przypadku umowy o pracę lub umowy zlecenia dochód netto, to dochód brutto pomniejszony o opłacane przez pracownika składki na ZUS/KRUS (rentowa, zdrowotna, emerytalna) oraz podatek od dochodu. \n<B>Dochód netto = Dochód brutto – ZUS/KRUS – PIT</B>\nPrzy działalności gospodarczej dochód netto to przychód pomniejszony o koszty, składkę ZUS oraz podatek dochodowy.\n<B>Dochód netto = Przychód – koszty – ZUS/KRUS – PIT\n</B>\nŚrednia z ostatnich 6 miesięcy to suma dochodu netto uzyskanego przez ostatnie 6 miesięcy podzielona przez 6.\nDochód, od którego odprowadzasz składki emerytalne i rentowe do ZUS, to dochód, na którego podstawie wyliczymy przybliżoną przyszłą emeryturę lub rentę jakie możesz otrzymać z ZUS.",
+  "prompt_code": null,
+  "prompt_value": null,
+  "order_no": 12,
+  "suborder_no": 0,
+  "answers": [
+    {
+      "quse_anse_map_code": "QUAN_61469",
+      "answer_code": "ADQ_ANS_NUMBER_ND",
+      "answer_value": "value",
+      "answer_visible": "Y",
+      "answer_data_type_code": "INTEGER",
+      "answer_patterns_code": "SOSY-1001",
+      "answer_patterns_value": "^[0-9]*[1-9][0-9]*$",
+      "answer_sufix": "zł",
+      "default_value": null,
+      "answer_lv_code": null,
+      "answer_lv_value": null,
+      "answer_is_main": "N",
+      "order_no": 1
+    },
+    {
+      "quse_anse_map_code": "QUAN_61470",
+      "answer_code": "ADQ_ANS_INCOME_14",
+      "answer_value": "Brak dochodu",
+      "answer_visible": "Y",
+      "answer_data_type_code": "BOOLEAN",
+      "answer_patterns_code": null,
+      "answer_patterns_value": null,
+      "answer_sufix": null,
+      "default_value": "N",
+      "answer_lv_code": null,
+      "answer_lv_value": null,
+      "answer_is_main": "N",
+      "order_no": 2
+    }
+  ],
+  "answer_cancel": {
+    "quse_anse_map_code": "QUAN_61471",
+    "answer_code": "ADQ_ANS_DENY",
+    "answer_value": "Odmowa odpowiedzi",
+    "answer_data_type_code": "BOOLEAN",
+    "answer_type_code": "BOOLEAN",
+    "answer_type_value": "Answer Yes or No",
+    "default_value": "N",
+    "answer_is_main": "Y",
+    "questionnaire_cancel": "Y"
+  }
+}

@@ -1,0 +1,526 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PruCheckbox should render correctly 1`] = `
+.c4 {
+  display: inline-block;
+  cursor: inherit;
+}
+
+.c4 > svg {
+  width: 16px;
+  height: 100%;
+  display: block;
+}
+
+.c4 svg g,
+.c4 svg g path,
+.c4 svg g circle,
+.c4 svg g rect {
+  stroke: #FFFFFF !important;
+}
+
+.c4 svg g rect {
+  fill: #FFFFFF !important;
+}
+
+.c4 svg g tspan {
+  stroke: transparent !important;
+  fill: #FFFFFF !important;
+}
+
+.c4 svg > path {
+  stroke: #FFFFFF !important;
+}
+
+.c8 {
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.c7 {
+  margin-top: 4px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+}
+
+.c9 {
+  color: #D13C15;
+  line-height: 18px;
+  min-height: 18px;
+}
+
+.c0 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  position: relative;
+}
+
+.c3 {
+  width: 24px;
+  min-width: 24px;
+  height: 24px;
+  border: 1px solid;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin-right: 12px;
+  cursor: pointer;
+  background-color: #F9FDFD;
+  border-color: #17B0AD;
+}
+
+.c3:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.c3:hover {
+  background-color: #DCF3F3;
+  border-color: #055A60;
+}
+
+.c6 {
+  visibility: hidden;
+}
+
+.c1 {
+  display: none;
+}
+
+.c1:checked + .c2 .c5 {
+  visibility: initial;
+}
+
+<div>
+  <div
+    class="c0"
+  >
+    <input
+      class="c1"
+      type="checkbox"
+    />
+    <div
+      class="c2 c3"
+      role="checkbox"
+    >
+      <div
+        class="c4 c5 c6"
+        color="white100"
+      >
+        <svg>
+          check-white.svg
+        </svg>
+      </div>
+    </div>
+  </div>
+  <div
+    class="c7"
+  >
+    <div
+      class="c8 c9"
+    />
+  </div>
+  <div />
+</div>
+`;
+
+exports[`PruCheckbox should render the calcTableItem checkbox 1`] = `
+.c2 {
+  display: inline-block;
+  cursor: inherit;
+}
+
+.c2 > svg {
+  width: 16px;
+  height: 100%;
+  display: block;
+}
+
+.c2 svg g,
+.c2 svg g path,
+.c2 svg g circle,
+.c2 svg g rect {
+  stroke: #FFFFFF !important;
+}
+
+.c2 svg g rect {
+  fill: #FFFFFF !important;
+}
+
+.c2 svg g tspan {
+  stroke: transparent !important;
+  fill: #FFFFFF !important;
+}
+
+.c2 svg > path {
+  stroke: #FFFFFF !important;
+}
+
+.c1 {
+  width: 24px;
+  min-width: 24px;
+  height: 24px;
+  border: 1px solid;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin-right: 12px;
+  cursor: pointer;
+  background-color: #F9FDFD;
+  border-color: #17B0AD;
+}
+
+.c1:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.c1:hover {
+  background-color: #DCF3F3;
+  border-color: #055A60;
+}
+
+.c4 {
+  visibility: hidden;
+}
+
+.c5:checked + .c0 .c3 {
+  visibility: initial;
+}
+
+<div
+  class="c0 c1"
+  role="checkbox"
+>
+  <div
+    class="c2 c3 c4"
+    color="white100"
+  >
+    <svg>
+      check-white.svg
+    </svg>
+  </div>
+</div>
+`;
+
+exports[`PruCheckbox should render the checkboxList checkbox 1`] = `
+.c2 {
+  display: inline-block;
+  cursor: inherit;
+}
+
+.c2 > svg {
+  width: 16px;
+  height: 100%;
+  display: block;
+}
+
+.c2 svg g,
+.c2 svg g path,
+.c2 svg g circle,
+.c2 svg g rect {
+  stroke: #FFFFFF !important;
+}
+
+.c2 svg g rect {
+  fill: #FFFFFF !important;
+}
+
+.c2 svg g tspan {
+  stroke: transparent !important;
+  fill: #FFFFFF !important;
+}
+
+.c2 svg > path {
+  stroke: #FFFFFF !important;
+}
+
+.c1 {
+  width: 24px;
+  min-width: 24px;
+  height: 24px;
+  border: 1px solid;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin-right: 12px;
+  cursor: pointer;
+  background-color: #F9FDFD;
+  border-color: #17B0AD;
+}
+
+.c1:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.c1:hover {
+  background-color: #DCF3F3;
+  border-color: #055A60;
+}
+
+.c4 {
+  visibility: hidden;
+}
+
+.c5:checked + .c0 .c3 {
+  visibility: initial;
+}
+
+<div
+  class="c0 c1"
+  role="checkbox"
+>
+  <div
+    class="c2 c3 c4"
+    color="white100"
+  >
+    <svg>
+      check-white.svg
+    </svg>
+  </div>
+</div>
+`;
+
+exports[`PruCheckbox should render the gridItem checkbox 1`] = `
+.c2 {
+  display: inline-block;
+  cursor: inherit;
+}
+
+.c2 > svg {
+  width: 16px;
+  height: 100%;
+  display: block;
+}
+
+.c2 svg g,
+.c2 svg g path,
+.c2 svg g circle,
+.c2 svg g rect {
+  stroke: #FFFFFF !important;
+}
+
+.c2 svg g rect {
+  fill: #FFFFFF !important;
+}
+
+.c2 svg g tspan {
+  stroke: transparent !important;
+  fill: #FFFFFF !important;
+}
+
+.c2 svg > path {
+  stroke: #FFFFFF !important;
+}
+
+.c1 {
+  width: 24px;
+  min-width: 24px;
+  height: 24px;
+  border: 1px solid;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin-right: 12px;
+  cursor: pointer;
+  background-color: #F9FDFD;
+  border-color: #17B0AD;
+}
+
+.c1:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.c1:hover {
+  background-color: #DCF3F3;
+  border-color: #055A60;
+}
+
+.c4 {
+  visibility: hidden;
+}
+
+.c5:checked + .c0 .c3 {
+  visibility: initial;
+}
+
+<div
+  class="c0 c1"
+  role="checkbox"
+>
+  <div
+    class="c2 c3 c4"
+    color="white100"
+  >
+    <svg>
+      check-white.svg
+    </svg>
+  </div>
+</div>
+`;
+
+exports[`PruCheckbox should render the regular checkbox 1`] = `
+.c2 {
+  display: inline-block;
+  cursor: inherit;
+}
+
+.c2 > svg {
+  width: 16px;
+  height: 100%;
+  display: block;
+}
+
+.c2 svg g,
+.c2 svg g path,
+.c2 svg g circle,
+.c2 svg g rect {
+  stroke: #FFFFFF !important;
+}
+
+.c2 svg g rect {
+  fill: #FFFFFF !important;
+}
+
+.c2 svg g tspan {
+  stroke: transparent !important;
+  fill: #FFFFFF !important;
+}
+
+.c2 svg > path {
+  stroke: #FFFFFF !important;
+}
+
+.c1 {
+  width: 24px;
+  min-width: 24px;
+  height: 24px;
+  border: 1px solid;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin-right: 12px;
+  cursor: pointer;
+  background-color: #F9FDFD;
+  border-color: #17B0AD;
+}
+
+.c1:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.c1:hover {
+  background-color: #DCF3F3;
+  border-color: #055A60;
+}
+
+.c4 {
+  visibility: hidden;
+}
+
+.c5:checked + .c0 .c3 {
+  visibility: initial;
+}
+
+<div
+  class="c0 c1"
+  role="checkbox"
+>
+  <div
+    class="c2 c3 c4"
+    color="white100"
+  >
+    <svg>
+      check-white.svg
+    </svg>
+  </div>
+</div>
+`;

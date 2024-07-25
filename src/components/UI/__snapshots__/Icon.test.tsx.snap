@@ -1,0 +1,905 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Icon accepts custom color 1`] = `
+.c0 {
+  display: inline-block;
+  cursor: inherit;
+}
+
+.c0 > svg {
+  height: 100%;
+  display: block;
+}
+
+.c0 svg g,
+.c0 svg g path,
+.c0 svg g circle,
+.c0 svg g rect {
+  stroke: #055A60 !important;
+}
+
+.c0 svg g rect {
+  fill: #055A60 !important;
+}
+
+.c0 svg g tspan {
+  stroke: transparent !important;
+  fill: #055A60 !important;
+}
+
+.c0 svg > path {
+  stroke: #055A60 !important;
+}
+
+<div
+  class="c0"
+  color="primary100"
+  data-testid="icon"
+>
+  <svg>
+    check.svg
+  </svg>
+</div>
+`;
+
+exports[`Icon handles different sizes 1`] = `
+.c0 {
+  display: inline-block;
+  cursor: inherit;
+}
+
+.c0 > svg {
+  width: 2137px;
+  height: 100%;
+  display: block;
+}
+
+<div
+  class="c0"
+  data-testid="icon"
+>
+  <svg>
+    check.svg
+  </svg>
+</div>
+`;
+
+exports[`Icon renders alert-double-triangle icon 1`] = `
+.c0 {
+  display: inline-block;
+  cursor: inherit;
+}
+
+.c0 > svg {
+  height: 100%;
+  display: block;
+}
+
+<div
+  class="c0"
+  data-testid="icon"
+>
+  <svg>
+    alert-double-triangle.svg
+  </svg>
+</div>
+`;
+
+exports[`Icon renders alert-fill icon 1`] = `
+.c0 {
+  display: inline-block;
+  cursor: inherit;
+}
+
+.c0 > svg {
+  height: 100%;
+  display: block;
+}
+
+<div
+  class="c0"
+  data-testid="icon"
+>
+  <svg>
+    alert-fill.svg
+  </svg>
+</div>
+`;
+
+exports[`Icon renders alert-triangle icon 1`] = `
+.c0 {
+  display: inline-block;
+  cursor: inherit;
+}
+
+.c0 > svg {
+  height: 100%;
+  display: block;
+}
+
+<div
+  class="c0"
+  data-testid="icon"
+>
+  <svg>
+    alert-triangle.svg
+  </svg>
+</div>
+`;
+
+exports[`Icon renders arrow-right icon 1`] = `
+.c0 {
+  display: inline-block;
+  cursor: inherit;
+}
+
+.c0 > svg {
+  height: 100%;
+  display: block;
+}
+
+<div
+  class="c0"
+  data-testid="icon"
+>
+  <svg>
+    arrow-right.svg
+  </svg>
+</div>
+`;
+
+exports[`Icon renders arrow-up icon 1`] = `
+.c0 {
+  display: inline-block;
+  cursor: inherit;
+}
+
+.c0 > svg {
+  height: 100%;
+  display: block;
+}
+
+<div
+  class="c0"
+  data-testid="icon"
+>
+  <svg>
+    arrow-up.svg
+  </svg>
+</div>
+`;
+
+exports[`Icon renders calculator icon 1`] = `
+.c0 {
+  display: inline-block;
+  cursor: inherit;
+}
+
+.c0 > svg {
+  height: 100%;
+  display: block;
+}
+
+<div
+  class="c0"
+  data-testid="icon"
+>
+  <svg>
+    calculator.svg
+  </svg>
+</div>
+`;
+
+exports[`Icon renders calculator-plus icon 1`] = `
+.c0 {
+  display: inline-block;
+  cursor: inherit;
+}
+
+.c0 > svg {
+  height: 100%;
+  display: block;
+}
+
+<div
+  class="c0"
+  data-testid="icon"
+>
+  <svg>
+    calculator-plus.svg
+  </svg>
+</div>
+`;
+
+exports[`Icon renders calendar icon 1`] = `
+.c0 {
+  display: inline-block;
+  cursor: inherit;
+}
+
+.c0 > svg {
+  height: 100%;
+  display: block;
+}
+
+<div
+  class="c0"
+  data-testid="icon"
+>
+  <svg>
+    calendar.svg
+  </svg>
+</div>
+`;
+
+exports[`Icon renders check icon 1`] = `
+.c0 {
+  display: inline-block;
+  cursor: inherit;
+}
+
+.c0 > svg {
+  height: 100%;
+  display: block;
+}
+
+<div
+  class="c0"
+  data-testid="icon"
+>
+  <svg>
+    check.svg
+  </svg>
+</div>
+`;
+
+exports[`Icon renders chevron-down icon 1`] = `
+.c0 {
+  display: inline-block;
+  cursor: inherit;
+}
+
+.c0 > svg {
+  height: 100%;
+  display: block;
+}
+
+<div
+  class="c0"
+  data-testid="icon"
+>
+  <svg>
+    chevron-down.svg
+  </svg>
+</div>
+`;
+
+exports[`Icon renders chevron-down-2 icon 1`] = `
+.c0 {
+  display: inline-block;
+  cursor: inherit;
+}
+
+.c0 > svg {
+  height: 100%;
+  display: block;
+}
+
+<div
+  class="c0"
+  data-testid="icon"
+>
+  <svg>
+    chevron-down-2.svg
+  </svg>
+</div>
+`;
+
+exports[`Icon renders chevron-down-3 icon 1`] = `
+.c0 {
+  display: inline-block;
+  cursor: inherit;
+}
+
+.c0 > svg {
+  height: 100%;
+  display: block;
+}
+
+<div
+  class="c0"
+  data-testid="icon"
+>
+  <svg>
+    chevron-down-3.svg
+  </svg>
+</div>
+`;
+
+exports[`Icon renders chevron-left icon 1`] = `
+.c0 {
+  display: inline-block;
+  cursor: inherit;
+}
+
+.c0 > svg {
+  height: 100%;
+  display: block;
+}
+
+<div
+  class="c0"
+  data-testid="icon"
+>
+  <svg>
+    chevron-left.svg
+  </svg>
+</div>
+`;
+
+exports[`Icon renders chevron-right icon 1`] = `
+.c0 {
+  display: inline-block;
+  cursor: inherit;
+}
+
+.c0 > svg {
+  height: 100%;
+  display: block;
+}
+
+<div
+  class="c0"
+  data-testid="icon"
+>
+  <svg>
+    chevron-right.svg
+  </svg>
+</div>
+`;
+
+exports[`Icon renders chevron-up icon 1`] = `
+.c0 {
+  display: inline-block;
+  cursor: inherit;
+}
+
+.c0 > svg {
+  height: 100%;
+  display: block;
+}
+
+<div
+  class="c0"
+  data-testid="icon"
+>
+  <svg>
+    chevron-up.svg
+  </svg>
+</div>
+`;
+
+exports[`Icon renders commission-system icon 1`] = `
+.c0 {
+  display: inline-block;
+  cursor: inherit;
+}
+
+.c0 > svg {
+  height: 100%;
+  display: block;
+}
+
+<div
+  class="c0"
+  data-testid="icon"
+>
+  <svg>
+    commission-system.svg
+  </svg>
+</div>
+`;
+
+exports[`Icon renders corner-downn-left icon 1`] = `
+.c0 {
+  display: inline-block;
+  cursor: inherit;
+}
+
+.c0 > svg {
+  height: 100%;
+  display: block;
+}
+
+<div
+  class="c0"
+  data-testid="icon"
+>
+  <svg>
+    corner-down-left.svg
+  </svg>
+</div>
+`;
+
+exports[`Icon renders electronic-application icon 1`] = `
+.c0 {
+  display: inline-block;
+  cursor: inherit;
+}
+
+.c0 > svg {
+  height: 100%;
+  display: block;
+}
+
+<div
+  class="c0"
+  data-testid="icon"
+>
+  <svg>
+    electronic-application.svg
+  </svg>
+</div>
+`;
+
+exports[`Icon renders file-text icon 1`] = `
+.c0 {
+  display: inline-block;
+  cursor: inherit;
+}
+
+.c0 > svg {
+  height: 100%;
+  display: block;
+}
+
+<div
+  class="c0"
+  data-testid="icon"
+>
+  <svg>
+    file-text.svg
+  </svg>
+</div>
+`;
+
+exports[`Icon renders group icon 1`] = `
+.c0 {
+  display: inline-block;
+  cursor: inherit;
+}
+
+.c0 > svg {
+  height: 100%;
+  display: block;
+}
+
+<div
+  class="c0"
+  data-testid="icon"
+>
+  <svg>
+    group.svg
+  </svg>
+</div>
+`;
+
+exports[`Icon renders handshake icon 1`] = `
+.c0 {
+  display: inline-block;
+  cursor: inherit;
+}
+
+.c0 > svg {
+  height: 100%;
+  display: block;
+}
+
+<div
+  class="c0"
+  data-testid="icon"
+>
+  <svg>
+    handshake.svg
+  </svg>
+</div>
+`;
+
+exports[`Icon renders home icon 1`] = `
+.c0 {
+  display: inline-block;
+  cursor: inherit;
+}
+
+.c0 > svg {
+  height: 100%;
+  display: block;
+}
+
+<div
+  class="c0"
+  data-testid="icon"
+>
+  <svg>
+    home.svg
+  </svg>
+</div>
+`;
+
+exports[`Icon renders illustration-frame-rounded icon 1`] = `
+.c0 {
+  display: inline-block;
+  cursor: inherit;
+}
+
+.c0 > svg {
+  height: 100%;
+  display: block;
+}
+
+<div
+  class="c0"
+  data-testid="icon"
+>
+  <svg>
+    illustration-frame-rounded.svg
+  </svg>
+</div>
+`;
+
+exports[`Icon renders info icon 1`] = `
+.c0 {
+  display: inline-block;
+  cursor: inherit;
+}
+
+.c0 > svg {
+  height: 100%;
+  display: block;
+}
+
+<div
+  class="c0"
+  data-testid="icon"
+>
+  <svg>
+    info.svg
+  </svg>
+</div>
+`;
+
+exports[`Icon renders library icon 1`] = `
+.c0 {
+  display: inline-block;
+  cursor: inherit;
+}
+
+.c0 > svg {
+  height: 100%;
+  display: block;
+}
+
+<div
+  class="c0"
+  data-testid="icon"
+>
+  <svg>
+    library.svg
+  </svg>
+</div>
+`;
+
+exports[`Icon renders logout icon 1`] = `
+.c0 {
+  display: inline-block;
+  cursor: inherit;
+}
+
+.c0 > svg {
+  height: 100%;
+  display: block;
+}
+
+<div
+  class="c0"
+  data-testid="icon"
+>
+  <svg>
+    logout.svg
+  </svg>
+</div>
+`;
+
+exports[`Icon renders mail icon 1`] = `
+.c0 {
+  display: inline-block;
+  cursor: inherit;
+}
+
+.c0 > svg {
+  height: 100%;
+  display: block;
+}
+
+<div
+  class="c0"
+  data-testid="icon"
+>
+  <svg>
+    mail.svg
+  </svg>
+</div>
+`;
+
+exports[`Icon renders mail-x icon 1`] = `
+.c0 {
+  display: inline-block;
+  cursor: inherit;
+}
+
+.c0 > svg {
+  height: 100%;
+  display: block;
+}
+
+<div
+  class="c0"
+  data-testid="icon"
+>
+  <svg>
+    mail-x.svg
+  </svg>
+</div>
+`;
+
+exports[`Icon renders old-check-white icon 1`] = `
+.c0 {
+  display: inline-block;
+  cursor: inherit;
+}
+
+.c0 > svg {
+  height: 100%;
+  display: block;
+}
+
+<div
+  class="c0"
+  data-testid="icon"
+>
+  <svg>
+    check-white.svg
+  </svg>
+</div>
+`;
+
+exports[`Icon renders padlock icon 1`] = `
+.c0 {
+  display: inline-block;
+  cursor: inherit;
+}
+
+.c0 > svg {
+  height: 100%;
+  display: block;
+}
+
+<div
+  class="c0"
+  data-testid="icon"
+>
+  <svg>
+    padlock.svg
+  </svg>
+</div>
+`;
+
+exports[`Icon renders people icon 1`] = `
+.c0 {
+  display: inline-block;
+  cursor: inherit;
+}
+
+.c0 > svg {
+  height: 100%;
+  display: block;
+}
+
+<div
+  class="c0"
+  data-testid="icon"
+>
+  <svg>
+    people.svg
+  </svg>
+</div>
+`;
+
+exports[`Icon renders plus icon 1`] = `
+.c0 {
+  display: inline-block;
+  cursor: inherit;
+}
+
+.c0 > svg {
+  height: 100%;
+  display: block;
+}
+
+<div
+  class="c0"
+  data-testid="icon"
+>
+  <svg>
+    plus.svg
+  </svg>
+</div>
+`;
+
+exports[`Icon renders products icon 1`] = `
+.c0 {
+  display: inline-block;
+  cursor: inherit;
+}
+
+.c0 > svg {
+  height: 100%;
+  display: block;
+}
+
+<div
+  class="c0"
+  data-testid="icon"
+>
+  <svg>
+    products.svg
+  </svg>
+</div>
+`;
+
+exports[`Icon renders pru-logo icon 1`] = `
+.c0 {
+  display: inline-block;
+  cursor: inherit;
+}
+
+.c0 > svg {
+  height: 100%;
+  display: block;
+}
+
+<div
+  class="c0"
+  data-testid="icon"
+>
+  <svg>
+    logo.svg
+  </svg>
+</div>
+`;
+
+exports[`Icon renders refresh icon 1`] = `
+.c0 {
+  display: inline-block;
+  cursor: inherit;
+}
+
+.c0 > svg {
+  height: 100%;
+  display: block;
+}
+
+<div
+  class="c0"
+  data-testid="icon"
+>
+  <svg>
+    refresh.svg
+  </svg>
+</div>
+`;
+
+exports[`Icon renders search icon 1`] = `
+.c0 {
+  display: inline-block;
+  cursor: inherit;
+}
+
+.c0 > svg {
+  height: 100%;
+  display: block;
+}
+
+<div
+  class="c0"
+  data-testid="icon"
+>
+  <svg>
+    search.svg
+  </svg>
+</div>
+`;
+
+exports[`Icon renders trash icon 1`] = `
+.c0 {
+  display: inline-block;
+  cursor: inherit;
+}
+
+.c0 > svg {
+  height: 100%;
+  display: block;
+}
+
+<div
+  class="c0"
+  data-testid="icon"
+>
+  <svg>
+    trash.svg
+  </svg>
+</div>
+`;
+
+exports[`Icon renders trash-2 icon 1`] = `
+.c0 {
+  display: inline-block;
+  cursor: inherit;
+}
+
+.c0 > svg {
+  height: 100%;
+  display: block;
+}
+
+<div
+  class="c0"
+  data-testid="icon"
+>
+  <svg>
+    trash-2.svg
+  </svg>
+</div>
+`;
+
+exports[`Icon renders user-plus icon 1`] = `
+.c0 {
+  display: inline-block;
+  cursor: inherit;
+}
+
+.c0 > svg {
+  height: 100%;
+  display: block;
+}
+
+<div
+  class="c0"
+  data-testid="icon"
+>
+  <svg>
+    user-plus.svg
+  </svg>
+</div>
+`;
+
+exports[`Icon renders x icon 1`] = `
+.c0 {
+  display: inline-block;
+  cursor: inherit;
+}
+
+.c0 > svg {
+  height: 100%;
+  display: block;
+}
+
+<div
+  class="c0"
+  data-testid="icon"
+>
+  <svg>
+    x.svg
+  </svg>
+</div>
+`;

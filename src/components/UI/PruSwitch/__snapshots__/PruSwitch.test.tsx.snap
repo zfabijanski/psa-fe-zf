@@ -1,0 +1,83 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PruSwitch should render correctly 1`] = `
+.c0 {
+  position: relative;
+  width: 44px;
+  min-width: 44px;
+  height: 24px;
+  display: block;
+}
+
+.c3 {
+  font-family: "pru-internal_iconfont" !important;
+  text-align: center;
+  font-weight: bold;
+  cursor: pointer;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  border-radius: 11.5px;
+  border: 1.5px solid #2F2F2F;
+  background-color: #FFFFFF;
+}
+
+.c3:before {
+  content: "";
+  color: #FFFFFF;
+  background-color: #2F2F2F;
+  line-height: 24px;
+  height: 24px;
+  width: 24px;
+  position: absolute;
+  top: -1.5px;
+  left: -1.5px;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  border-radius: 50%;
+}
+
+.c1 {
+  display: none;
+}
+
+.c1:checked + .c2 {
+  border: none;
+  background-color: #055A60;
+}
+
+.c1:checked + .c2:before {
+  content: "";
+  color: #2F2F2F;
+  background-color: #FFFFFF;
+  height: 20px;
+  width: 20px;
+  line-height: 21px;
+  position: absolute;
+  top: 2px;
+  left: 22px;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  border-radius: 50%;
+}
+
+<div>
+  <label
+    class="c0"
+    role="checkbox"
+  >
+    <input
+      class="c1"
+      type="checkbox"
+    />
+    <div
+      class="c2 c3"
+    />
+  </label>
+  <div />
+</div>
+`;

@@ -1,0 +1,61 @@
+{
+  "questionnaire_code": "QUSE_1014",
+  "adequacy_version": "2.0.0",
+  "sections_code": "SECTION_B",
+  "sections_value": "DOCHÓD",
+  "question_type_code": "MULTI",
+  "question_data_type_value": "Multi",
+  "answer_type_code": "SINGLE",
+  "answer_type_value": "Single answer",
+  "question_code": "ADQ_QUE_38",
+  "question_value": "Podaj przybliżoną miesięczną kwotę stanowiącą połowę wolnych środków jakie zostają Ci po opłaceniu kosztów utrzymania i zobowiązań.",
+  "question_tooltip_code": "QTPC-1000",
+  "question_tooltip_value": "Według rekomendacji KNF na składkę regularną możesz przeznaczyć maksymalnie 50% wolnych środków jekie zostają Ci po opłaceniu kosztów utrzymania i zobowiązań",
+  "prompt_code": null,
+  "prompt_value": null,
+  "order_no": 11,
+  "suborder_no": 1,
+  "answers": [
+    {
+      "quse_anse_map_code": "QUAN_61466",
+      "answer_code": "ADQ_ANS_NUMBER_ND",
+      "answer_value": "value",
+      "answer_visible": "Y",
+      "answer_data_type_code": "INTEGER",
+      "answer_patterns_code": "SOSY-1001",
+      "answer_patterns_value": "^[0-9]*[1-9][0-9]*$",
+      "answer_sufix": "zł",
+      "default_value": "0",
+      "answer_lv_code": null,
+      "answer_lv_value": null,
+      "answer_is_main": "N",
+      "order_no": 1
+    },
+    {
+      "quse_anse_map_code": "QUAN_61467",
+      "answer_code": "ADQ_ANS_OUTCOME_7",
+      "answer_value": "Brak wolnych środków",
+      "answer_visible": "Y",
+      "answer_data_type_code": "BOOLEAN",
+      "answer_patterns_code": null,
+      "answer_patterns_value": null,
+      "answer_sufix": null,
+      "default_value": "N",
+      "answer_lv_code": null,
+      "answer_lv_value": null,
+      "answer_is_main": "Y",
+      "order_no": 2
+    }
+  ],
+  "answer_cancel": {
+    "quse_anse_map_code": "QUAN_61468",
+    "answer_code": "ADQ_ANS_DENY",
+    "answer_value": "Odmowa odpowiedzi",
+    "answer_data_type_code": "BOOLEAN",
+    "answer_type_code": "BOOLEAN",
+    "answer_type_value": "Answer Yes or No",
+    "default_value": "N",
+    "answer_is_main": "Y",
+    "questionnaire_cancel": "Y"
+  }
+}

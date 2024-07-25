@@ -1,0 +1,10 @@
+{
+  "recommendations": [
+    "infeng.vscode-react-typescript",
+    "eamodio.gitlens",
+    "esbenp.prettier-vscode",
+    "ms-vscode.vscode-typescript-tslint-plugin",
+    "jpoissonnier.vscode-styled-components",
+    "wayou.vscode-todo-highlight"
+  ]
+}

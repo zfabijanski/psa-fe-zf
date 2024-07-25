@@ -1,0 +1,82 @@
+{
+  "questionnaire_code": "QUSE_1006",
+  "adequacy_version": "2.0.0",
+  "sections_code": "SECTION_A",
+  "sections_value": "INFORMACJE PODSTAWOWE",
+  "question_type_code": "MULTI_GROUP",
+  "question_data_type_value": "Multi group",
+  "answer_type_code": "MULTI",
+  "answer_type_value": "Multi answers",
+  "question_code": "ADQ_QUE_2_2",
+  "question_value": "W jakim wieku jest dziecko/ są dzieci? ",
+  "question_tooltip_code": null,
+  "question_tooltip_value": null,
+  "prompt_code": null,
+  "prompt_value": null,
+  "order_no": 6,
+  "suborder_no": 2,
+  "answers": [
+    {
+      "quse_anse_map_code": "QUAN_61412",
+      "answer_code": "ADQ_ANS_SUB",
+      "answer_value": "sub answers",
+      "answer_visible": "N",
+      "answer_data_type_code": "BOOLEAN",
+      "answer_patterns_code": null,
+      "answer_patterns_value": null,
+      "answer_sufix": null,
+      "default_value": "Y",
+      "answer_lv_code": null,
+      "answer_lv_value": null,
+      "answer_is_main": "Y",
+      "order_no": 1,
+      "subanswers": [
+        {
+          "quse_anse_map_code": "QUAN_61648",
+          "answer_code": "ADQ_ANS_CHILD_NAME",
+          "answer_value": "Imię dziecka",
+          "answer_visible": "Y",
+          "answer_data_type_code": "STRING",
+          "answer_patterns_code": null,
+          "answer_patterns_value": null,
+          "answer_sufix": null,
+          "default_value": null,
+          "answer_lv_code": null,
+          "answer_lv_value": null,
+          "required": "N",
+          "answer_is_main": "N",
+          "order_no": 1,
+          "suborder_no": 1
+        },
+        {
+          "quse_anse_map_code": "QUAN_61649",
+          "answer_code": "ADQ_ANS_OLD",
+          "answer_value": "Wiek",
+          "answer_visible": "Y",
+          "answer_data_type_code": "STRING",
+          "answer_patterns_code": null,
+          "answer_patterns_value": null,
+          "answer_sufix": null,
+          "default_value": null,
+          "answer_lv_code": "ANSWER_OLD_LV",
+          "answer_lv_value": "Lista wartości dla wieku",
+          "required": "Y",
+          "answer_is_main": "N",
+          "order_no": 1,
+          "suborder_no": 2
+        }
+      ]
+    }
+  ],
+  "answer_cancel": {
+    "quse_anse_map_code": "QUAN_61413",
+    "answer_code": "ADQ_ANS_DENY",
+    "answer_value": "Odmowa odpowiedzi",
+    "answer_data_type_code": "BOOLEAN",
+    "answer_type_code": "BOOLEAN",
+    "answer_type_value": "Answer Yes or No",
+    "default_value": "N",
+    "answer_is_main": "Y",
+    "questionnaire_cancel": "Y"
+  }
+}

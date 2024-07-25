@@ -1,0 +1,34 @@
+{
+  "questionnaire_code": "QUSE_1051",
+  "adequacy_version": "2.0.0",
+  "sections_code": "ADQ_CES_2",
+  "sections_value": "Dochód",
+  "question_type_code": "INFO",
+  "answer_type_code": "SINGLE",
+  "question_code": "ADQ_QUE_38_2_1",
+  "question_value": "Łącznie Twój dochód.",
+  "question_tooltip_code": null,
+  "question_tooltip_value": null,
+  "prompt_code": null,
+  "prompt_value": null,
+  "answers": [
+    {
+      "quse_anse_map_code": "QUAN_61534",
+      "answer_code": "ADQ_ANS_CURRENCY_PLN",
+      "answer_value": "value",
+      "answer_data_type_code": "INTEGER",
+      "answer_patterns_code": null,
+      "answer_patterns_value": null,
+      "default_value": null,
+      "answer_visible": "Y",
+      "answer_lv_code": null,
+      "answer_lv_value": null,
+      "answer_sufix": "zł",
+      "answer_is_main": "N",
+      "order_no": 1,
+      "icons": [],
+      "subanswers": []
+    }
+  ],
+  "answer_cancel": []
+}

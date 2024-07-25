@@ -1,0 +1,167 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AddSectionButton should render correctly 1`] = `
+.c8 {
+  display: inline-block;
+  cursor: inherit;
+}
+
+.c8 > svg {
+  width: 20px;
+  height: 100%;
+  display: block;
+}
+
+.c2 {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 28px;
+}
+
+.c3 {
+  color: #055A60;
+}
+
+.c5 {
+  height: 1px;
+  background-color: #055A60;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  min-width: 200px;
+  margin: 0 12px;
+}
+
+.c7 {
+  background-color: #FFFFFF;
+  border: 2px solid #055A60;
+  color: #055A60;
+  padding: 0 24px;
+  height: 44px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  font-weight: 700;
+}
+
+.c10 {
+  margin-left: 12px;
+}
+
+.c10 svg g,
+.c10 svg g path,
+.c10 svg g circle,
+.c10 svg g rect {
+  stroke: #055A60 !important;
+}
+
+.c10 svg g rect {
+  fill: #055A60 !important;
+}
+
+.c10 svg g tspan {
+  stroke: transparent !important;
+  fill: #055A60 !important;
+}
+
+.c10 svg > path {
+  stroke: #055A60 !important;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+}
+
+.c0:hover:not(:active) .c1 {
+  color: #2F2F2F;
+}
+
+.c0:hover:not(:active) .c4 {
+  background-color: #2F2F2F;
+}
+
+.c0:hover:not(:active) .c6 {
+  border-color: #2F2F2F;
+  color: #2F2F2F;
+}
+
+.c0:hover:not(:active) .c9 svg g,
+.c0:hover:not(:active) .c9 svg g path,
+.c0:hover:not(:active) .c9 svg g circle,
+.c0:hover:not(:active) .c9 svg g rect {
+  stroke: #2F2F2F !important;
+}
+
+.c0:hover:not(:active) .c9 svg g rect {
+  fill: #2F2F2F !important;
+}
+
+.c0:hover:not(:active) .c9 svg g tspan {
+  stroke: transparent !important;
+  fill: #2F2F2F !important;
+}
+
+.c0:hover:not(:active) .c9 svg > path {
+  stroke: #2F2F2F !important;
+}
+
+.c0:active .c6 {
+  background-color: #EDF9F9;
+}
+
+<div>
+  <div
+    class="c0"
+  >
+    <div
+      class="c1 c2 c3"
+    >
+      test
+    </div>
+    <div
+      class="c4 c5"
+    />
+    <div
+      class="c6 c7"
+    >
+      common.add
+      <div
+        class="c8 c9 c10"
+      >
+        <svg>
+          plus.svg
+        </svg>
+      </div>
+    </div>
+  </div>
+  <div />
+</div>
+`;

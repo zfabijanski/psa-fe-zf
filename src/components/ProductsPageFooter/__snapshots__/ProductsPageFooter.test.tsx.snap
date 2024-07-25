@@ -1,0 +1,432 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProductsPageFooter should render correctly 1`] = `
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c12 {
+  display: inline-block;
+  cursor: inherit;
+}
+
+.c12 > svg {
+  height: 100%;
+  display: block;
+}
+
+.c10 {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  outline: 0px;
+  cursor: pointer;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 128px;
+  max-width: 400px;
+  height: 52px;
+  padding-left: 32px;
+  padding-right: 32px;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 20px;
+  text-align: center;
+  color: #181818;
+  background-color: #FFFFFF;
+  border: 2px solid #E3E3E3;
+}
+
+.c10 svg g,
+.c10 svg g path,
+.c10 svg g circle,
+.c10 svg g rect {
+  stroke: #181818;
+}
+
+.c10 svg g rect {
+  fill: #181818;
+}
+
+.c10 svg g tspan {
+  stroke: transparent;
+  fill: #181818;
+}
+
+.c10 svg > path {
+  stroke: #181818;
+}
+
+.c10:hover {
+  color: #055A60;
+  background-color: #FFFFFF;
+  border: 2px solid #055A60;
+}
+
+.c10:hover svg g,
+.c10:hover svg g path,
+.c10:hover svg g circle,
+.c10:hover svg g rect {
+  stroke: #055A60;
+}
+
+.c10:hover svg g rect {
+  fill: #055A60;
+}
+
+.c10:hover svg g tspan {
+  stroke: transparent;
+  fill: #055A60;
+}
+
+.c10:hover svg > path {
+  stroke: #055A60;
+}
+
+.c10:disabled {
+  cursor: initial;
+  color: #999999;
+  background-color: #F3F3F3;
+  border: 2px solid #E3E3E3;
+}
+
+.c10:disabled svg g,
+.c10:disabled svg g path,
+.c10:disabled svg g circle,
+.c10:disabled svg g rect {
+  stroke: #999999;
+}
+
+.c10:disabled svg g rect {
+  fill: #999999;
+}
+
+.c10:disabled svg g tspan {
+  stroke: transparent;
+  fill: #999999;
+}
+
+.c10:disabled svg > path {
+  stroke: #999999;
+}
+
+.c10:active:not(:disabled) {
+  -webkit-transform: translateY(1px);
+  -ms-transform: translateY(1px);
+  transform: translateY(1px);
+}
+
+.c11 {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  outline: 0px;
+  cursor: pointer;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 128px;
+  max-width: 400px;
+  height: 52px;
+  padding-left: 32px;
+  padding-right: 32px;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 20px;
+  text-align: center;
+  color: #FFFFFF;
+  background-color: #055A60;
+  border: 2px solid #055A60;
+}
+
+.c11 svg g,
+.c11 svg g path,
+.c11 svg g circle,
+.c11 svg g rect {
+  stroke: #FFFFFF;
+}
+
+.c11 svg g rect {
+  fill: #FFFFFF;
+}
+
+.c11 svg g tspan {
+  stroke: transparent;
+  fill: #FFFFFF;
+}
+
+.c11 svg > path {
+  stroke: #FFFFFF;
+}
+
+.c11:hover {
+  color: #FFFFFF;
+  background-color: #181818;
+  border: 2px solid #181818;
+}
+
+.c11:hover svg g,
+.c11:hover svg g path,
+.c11:hover svg g circle,
+.c11:hover svg g rect {
+  stroke: #FFFFFF;
+}
+
+.c11:hover svg g rect {
+  fill: #FFFFFF;
+}
+
+.c11:hover svg g tspan {
+  stroke: transparent;
+  fill: #FFFFFF;
+}
+
+.c11:hover svg > path {
+  stroke: #FFFFFF;
+}
+
+.c11:disabled {
+  cursor: initial;
+  color: #FFFFFF;
+  background-color: #9BBDBF;
+  border: 2px solid #9BBDBF;
+}
+
+.c11:disabled svg g,
+.c11:disabled svg g path,
+.c11:disabled svg g circle,
+.c11:disabled svg g rect {
+  stroke: #FFFFFF;
+}
+
+.c11:disabled svg g rect {
+  fill: #FFFFFF;
+}
+
+.c11:disabled svg g tspan {
+  stroke: transparent;
+  fill: #FFFFFF;
+}
+
+.c11:disabled svg > path {
+  stroke: #FFFFFF;
+}
+
+.c11:active:not(:disabled) {
+  -webkit-transform: translateY(1px);
+  -ms-transform: translateY(1px);
+  transform: translateY(1px);
+}
+
+.c13 {
+  margin-right: -4px;
+  margin-left: 12px;
+}
+
+.c0 {
+  margin: 0 auto;
+  width: 100%;
+  min-height: 80px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  min-height: 100%;
+  margin: 0;
+  background-color: #FFFFFF;
+  z-index: 50;
+}
+
+.c3 {
+  width: 100%;
+  margin: auto;
+  padding: 0 48px;
+}
+
+.c4 {
+  width: 33.33%;
+}
+
+.c5 {
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  white-space: nowrap;
+}
+
+.c6 {
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+}
+
+.c7 {
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c9 {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 12px;
+}
+
+.c8 {
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+}
+
+<div>
+  <div
+    class="c0"
+    data-testid="footer"
+  >
+    <div
+      class="c1"
+      data-testid="footer-wrapper"
+    >
+      <div
+        class="c2 c3"
+      >
+        <div
+          class="c4"
+        >
+          <div
+            class="c5 c6"
+          />
+        </div>
+        <div
+          class="c4"
+        >
+          <div
+            class="c5 c7"
+          />
+        </div>
+        <div
+          class="c4"
+        >
+          <div
+            class="c5 c8"
+          >
+            <div
+              class="c9"
+            >
+              <button
+                class="c10"
+                type="button"
+              >
+                bottomButtonBar.library
+              </button>
+              <button
+                class="c10"
+                type="button"
+              >
+                bottomButtonBar.application
+              </button>
+              <a
+                href="/adequacy-idd"
+              >
+                <button
+                  class="c10"
+                  type="button"
+                >
+                  idd.title
+                </button>
+              </a>
+              <a
+                href="/apk"
+              >
+                <button
+                  class="c10"
+                  type="button"
+                >
+                  apk.title
+                </button>
+              </a>
+              <button
+                class="c11"
+                type="button"
+              >
+                bottomButtonBar.email
+                <div
+                  class="c12 c13"
+                >
+                  <svg>
+                    arrow-right.svg
+                  </svg>
+                </div>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div />
+</div>
+`;

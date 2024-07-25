@@ -1,0 +1,371 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PruTable should render correctly 1`] = `
+.c4 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.c10 {
+  display: inline-block;
+  cursor: inherit;
+}
+
+.c10 > svg {
+  width: 16px;
+  height: 100%;
+  display: block;
+}
+
+.c6 {
+  cursor: pointer;
+  border: 1px solid #D1D1D1;
+}
+
+.c6:hover > * {
+  background-color: #F8F8F8;
+}
+
+.c7 {
+  padding: 13px 24px 13px 12px;
+  color: #232424;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.c8 {
+  text-align: left;
+  cursor: pointer;
+}
+
+.c9 {
+  background-color: #FFFFFF;
+  height: 28px;
+  width: 28px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  border: 2px solid #FFFFFF;
+}
+
+.c9 path {
+  stroke-width: 2px;
+}
+
+.c9:hover {
+  border-color: #055A60;
+  background-color: #F9FDFD;
+}
+
+.c9:hover path {
+  stroke: #055A60;
+}
+
+.c9:disabled {
+  border-color: #E3E3E3;
+  background-color: #EDEDED;
+}
+
+.c0 {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 16px;
+  line-height: 20px;
+  table-layout: fixed;
+}
+
+.c1 {
+  font-size: 14px;
+  line-height: 20px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  border: 1px solid #D1D1D1;
+}
+
+.c2 {
+  white-space: nowrap;
+  padding: 15px 12px;
+  width: 100px;
+  background-color: #FFFFFF;
+  color: #737373;
+  font-weight: normal;
+  position: -webkit-sticky;
+  position: sticky;
+  z-index: 1;
+  top: 0;
+  cursor: pointer;
+}
+
+.c2:hover {
+  color: #2F2F2F;
+}
+
+.c5 {
+  white-space: nowrap;
+  padding: 15px 12px;
+  width: 86px;
+  background-color: #FFFFFF;
+  color: #737373;
+  font-weight: normal;
+  position: -webkit-sticky;
+  position: sticky;
+  z-index: 1;
+  top: 0;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+<div>
+  <table
+    class="c0"
+  >
+    <thead>
+      <tr
+        class="c1"
+      >
+        <th
+          class="c2"
+          data-testid="table-header-id"
+          width="100px"
+        >
+          <div
+            class="c3"
+          >
+            <div
+              class="c4"
+            >
+              ID
+            </div>
+          </div>
+        </th>
+        <th
+          class="c5"
+          width="86px"
+        >
+          <div
+            class="c3"
+          >
+            meetingHistory.table.action
+          </div>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr
+        class="c6"
+      >
+        <td
+          class="c7"
+        >
+          test1
+        </td>
+        <td
+          class="c7 c8"
+          data-testid="delete-button"
+        >
+          <div
+            class="c9"
+          >
+            <div
+              class="c10"
+            >
+              <svg>
+                trash.svg
+              </svg>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr
+        class="c6"
+      >
+        <td
+          class="c7"
+        >
+          test2
+        </td>
+        <td
+          class="c7 c8"
+          data-testid="delete-button"
+        >
+          <div
+            class="c9"
+          >
+            <div
+              class="c10"
+            >
+              <svg>
+                trash.svg
+              </svg>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr
+        class="c6"
+      >
+        <td
+          class="c7"
+        >
+          test3
+        </td>
+        <td
+          class="c7 c8"
+          data-testid="delete-button"
+        >
+          <div
+            class="c9"
+          >
+            <div
+              class="c10"
+            >
+              <svg>
+                trash.svg
+              </svg>
+            </div>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <div />
+</div>
+`;
+
+exports[`SortingArrow should render correctly 1`] = `
+.c0 {
+  height: 25px;
+  width: 25px;
+  display: block;
+  position: relative;
+  cursor: pointer;
+}
+
+.c0:before,
+.c0:after {
+  border: 4px solid transparent;
+  content: "";
+  display: block;
+  height: 0;
+  right: 12px;
+  top: 50%;
+  position: absolute;
+  width: 0;
+}
+
+.c0:before {
+  border-bottom-color: #D1D1D1;
+  margin-top: -9px;
+}
+
+.c0:after {
+  border-top-color: #222;
+  margin-top: 1px;
+}
+
+.c0:hover {
+  opacity: 0.6;
+}
+
+<div>
+  <span
+    class="c0"
+    order="descend"
+  />
+  <div />
+</div>
+`;
+
+exports[`SortingArrow should render correctly when order is ascend 1`] = `
+.c0 {
+  height: 25px;
+  width: 25px;
+  display: block;
+  position: relative;
+  cursor: pointer;
+}
+
+.c0:before,
+.c0:after {
+  border: 4px solid transparent;
+  content: "";
+  display: block;
+  height: 0;
+  right: 12px;
+  top: 50%;
+  position: absolute;
+  width: 0;
+}
+
+.c0:before {
+  border-bottom-color: #222;
+  margin-top: -9px;
+}
+
+.c0:after {
+  border-top-color: #D1D1D1;
+  margin-top: 1px;
+}
+
+.c0:hover {
+  opacity: 0.6;
+}
+
+<div>
+  <span
+    class="c0"
+    order="ascend"
+  />
+  <div />
+</div>
+`;
+
+exports[`SpanGreen should render correctly 1`] = `
+.c0 {
+  background-color: #F0F7EC;
+  border-left: 2px solid #7EBD5F;
+  box-shadow: 0px 1px 1px rgba(10,27,56,0.24), 0px 0px 1px rgba(10,27,56,0.32);
+  padding: 0 6px 0 8px;
+}
+
+<div>
+  <span
+    class="c0"
+  />
+  <div />
+</div>
+`;
+
+exports[`SpanRed should render correctly 1`] = `
+.c0 {
+  background-color: #FBEFEC;
+  border-left: 2px solid #D13C15;
+  box-shadow: 0px 1px 1px rgba(10,27,56,0.24), 0px 0px 1px rgba(10,27,56,0.32);
+  padding: 0 6px 0 8px;
+}
+
+<div>
+  <span
+    class="c0"
+  />
+  <div />
+</div>
+`;

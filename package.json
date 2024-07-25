@@ -1,0 +1,135 @@
+{
+  "name": "psa-fe",
+  "version": "81.0.1",
+  "private": true,
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "homepage": "/psao",
+  "dependencies": {
+    "@reduxjs/toolkit": "^1.9.5",
+    "@types/express": "^4.17.13",
+    "@types/history": "^4.7.11",
+    "@types/jest": "27.4.1",
+    "@types/lodash": "^4.14.182",
+    "@types/node": "^14.0.0",
+    "@types/pdfjs-dist": "2.10.377",
+    "@types/react": "^18.0.9",
+    "@types/react-datepicker": "^4.4.1",
+    "@types/react-dom": "^18.0.4",
+    "@types/react-router-dom": "^5.3.3",
+    "@types/react-select": "^5.0.1",
+    "@types/request": "^2.48.8",
+    "@types/styled-components": "^5.1.25",
+    "@types/uuid": "^8.3.4",
+    "@types/yup": "^0.26.23",
+    "axios": "^0.26.1",
+    "date-fns": "^2.21.1",
+    "formik": "^1.5.8",
+    "intl-messageformat": "^9.12.0",
+    "lodash": "^4.17.21",
+    "moment": "^2.29.3",
+    "pdfjs-dist": "2.13.216",
+    "pesel-check": "^2.0.2",
+    "react": "^18.1.0",
+    "react-datepicker": "^4.7.0",
+    "react-dom": "^18.1.0",
+    "react-focus-on": "^3.5.4",
+    "react-intl": "^5.25.0",
+    "react-redux": "^8.0.0",
+    "react-router-dom": "^5.3.1",
+    "react-scripts": "^5.0.1",
+    "react-select": "^5.7.4",
+    "scroll-into-view-if-needed": "^2.2.29",
+    "shx": "^0.3.4",
+    "styled-components": "^5.3.5",
+    "styled-normalize": "^8.0.7",
+    "typescript": "~4.6.3",
+    "uuid": "^8.3.2",
+    "yup": "^0.27.0"
+  },
+  "scripts": {
+    "update": "yarn install --frozen-lockfile",
+    "start": "yarn start:proxy & yarn start:app",
+    "start:intl-debug": "REACT_APP_INTL_DEBUG=true yarn start",
+    "build": "yarn build:app",
+    "clean-build": "yarn build:clear-cache && yarn build",
+    "serve": "MODE=prod yarn start:proxy & yarn serve:app",
+    "test": "react-scripts test",
+    "start:proxy": "yarn node:mock & yarn node:proxy",
+    "start:app": "react-scripts start",
+    "build:app": "react-scripts build",
+    "build:clear-cache": "shx rm -rf node_modules/.cache/babel-loader",
+    "serve:app": "yarn node:static",
+    "node:mock": "nodemon proxy/mock.ts --watch proxy",
+    "node:proxy": "nodemon proxy/proxy.ts --watch proxy",
+    "node:static": "nodemon proxy/static.ts --watch proxy",
+    "lint": "eslint \"src/**/*.+(ts|tsx)\"",
+    "check:prettier": "prettier --list-different \"src/**/*.{ts,tsx,js,json,css,md}\"",
+    "check:build": "yarn run lint && yarn run check:prettier",
+    "fix:prettier": "prettier --write \"src/**/*.{ts,tsx,js,json,css,md}\"",
+    "fix:build": "yarn run lint --fix && yarn run fix:prettier",
+    "eject": "react-scripts eject",
+    "echo-version": "echo $npm_package_version",
+    "version": "shx echo \"{ \\\"version\\\": \\\"$npm_package_version\\\" }\" > public/info.json && git add public/info.json",
+    "postinstall": "shx cp node_modules/pdfjs-dist/build/pdf.worker.min.js public/pdf.worker.min.js"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^14.0.0",
+    "@testing-library/react-hooks": "^8.0.1",
+    "eslint-config-prettier": "^8.5.0",
+    "express": "^4.17.3",
+    "http-proxy-middleware": "^2.0.6",
+    "husky": "^7.0.4",
+    "jest-styled-components": "^7.1.1",
+    "lint-staged": "^12.3.8",
+    "nodemon": "^2.0.15",
+    "path": "^0.12.7",
+    "prettier": "^2.6.2",
+    "request": "^2.88.0",
+    "ts-node": "^10.7.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{ts,tsx,js,json,css,md}": [
+      "yarn fix:build",
+      "git add ."
+    ]
+  },
+  "babelMacros": {
+    "styledComponents": {}
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.{ts,tsx}",
+      "!src/**/*.d.ts",
+      "!src/**/index.ts",
+      "!src/**/types.ts"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 60,
+        "functions": 75,
+        "lines": 75,
+        "statements": 75
+      }
+    }
+  }
+}

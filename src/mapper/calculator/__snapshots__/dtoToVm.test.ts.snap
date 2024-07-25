@@ -1,0 +1,79 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Mapping DTO to VM maps DTO to VM 1`] = `
+Object {
+  "additionalCovers": Array [],
+  "additionalLifeAssureds": Array [],
+  "calculationId": 1,
+  "frequencyCode": undefined,
+  "fundContributions": Array [
+    Object {
+      "code": "code",
+      "funds": Array [],
+      "nameEN": "name_en",
+      "namePL": "name_pl",
+      "notes": "notes",
+      "riskLevel": 1,
+      "statusCode": "status_code",
+    },
+  ],
+  "guaranteedDeathBenefit": 100,
+  "guaranteedMaturityBenefit": 100,
+  "indexation": undefined,
+  "investmentProfile": undefined,
+  "mainCover": Object {
+    "checked": "N",
+    "code": "",
+    "directionOfCalculation": undefined,
+    "idxOption": undefined,
+  },
+  "mainInsured": Object {
+    "covers": Array [],
+  },
+  "policyHolder": Object {
+    "covers": Array [],
+  },
+  "policyHolderIsMainInsured": "N",
+  "premiumsTotal": 100,
+  "productCategories": Array [],
+  "productGuid": 1,
+  "projectedMaturityValueEgrM": 100,
+  "ropAvailable": undefined,
+  "ropOption": undefined,
+  "wopCovers": Array [],
+}
+`;
+
+exports[`Mapping DTO to VM maps fund risk profile to "low" when fund risk profile is not found 1`] = `
+Object {
+  "additionalCovers": Array [],
+  "additionalLifeAssureds": Array [],
+  "calculationId": 1,
+  "frequencyCode": undefined,
+  "fundContributions": Array [],
+  "guaranteedDeathBenefit": 100,
+  "guaranteedMaturityBenefit": 100,
+  "indexation": undefined,
+  "investmentProfile": undefined,
+  "mainCover": Object {
+    "checked": "N",
+    "code": "",
+    "directionOfCalculation": undefined,
+    "idxOption": undefined,
+  },
+  "mainInsured": Object {
+    "covers": Array [],
+  },
+  "policyHolder": Object {
+    "covers": Array [],
+  },
+  "policyHolderIsMainInsured": "N",
+  "premiumsTotal": 100,
+  "productCategories": Array [],
+  "productGuid": 1,
+  "projectedMaturityValueEgrM": 100,
+  "ropAvailable": undefined,
+  "ropOption": undefined,
+  "wopCovers": Array [],
+}
+`;

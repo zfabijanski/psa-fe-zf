@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PruText should render correctly 1`] = `
+.c0 {
+  color: #2F2F2F;
+}
+
+<div>
+  <span
+    class="c0"
+  >
+    Pru Text
+  </span>
+  <div />
+</div>
+`;

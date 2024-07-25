@@ -1,0 +1,61 @@
+{
+  "questionnaire_code": "QUSE_1037",
+  "adequacy_version": "2.0.0",
+  "sections_code": "SECTION_F",
+  "sections_value": "PRZYSZLOŚĆ TWOJA I TWOJEJ RODZINY",
+  "question_type_code": "SINGLE",
+  "question_data_type_value": "Single",
+  "answer_type_code": "SINGLE",
+  "answer_type_value": "Single answer",
+  "question_code": "ADQ_QUE_41",
+  "question_value": "Czy dotyczą Cię szczególne warunki przewidywane przez system emerytalny (np. służby mundurowe, górnictwo)?",
+  "question_tooltip_code": "QTPC-1011",
+  "question_tooltip_value": "Szczególne warunki przewidywane przez system emerytalny dotyczą m.in.:\n•\tSłużb mundurowych (policja, wojsko, strażacy, pracownicy służby więziennej i straży granicznej, inne służby - np. ABW, CBA, BOR),\n•\tUrzędników państwowych (sędziowie, prokuratorzy),\n•\tGórników,\n•\tNauczycieli,\n•\tRolników.",
+  "prompt_code": null,
+  "prompt_value": null,
+  "order_no": 46,
+  "suborder_no": 0,
+  "answers": [
+    {
+      "quse_anse_map_code": "QUAN_61606",
+      "answer_code": "ADQ_ANS_YES",
+      "answer_value": "Tak",
+      "answer_visible": "Y",
+      "answer_data_type_code": "BOOLEAN",
+      "answer_patterns_code": null,
+      "answer_patterns_value": null,
+      "answer_sufix": null,
+      "default_value": "N",
+      "answer_lv_code": null,
+      "answer_lv_value": null,
+      "answer_is_main": "N",
+      "order_no": 1
+    },
+    {
+      "quse_anse_map_code": "QUAN_61607",
+      "answer_code": "ADQ_ANS_NO",
+      "answer_value": "Nie",
+      "answer_visible": "Y",
+      "answer_data_type_code": "BOOLEAN",
+      "answer_patterns_code": null,
+      "answer_patterns_value": null,
+      "answer_sufix": null,
+      "default_value": "N",
+      "answer_lv_code": null,
+      "answer_lv_value": null,
+      "answer_is_main": "N",
+      "order_no": 2
+    }
+  ],
+  "answer_cancel": {
+    "quse_anse_map_code": "QUAN_61608",
+    "answer_code": "ADQ_ANS_DENY",
+    "answer_value": "Odmowa odpowiedzi",
+    "answer_data_type_code": "BOOLEAN",
+    "answer_type_code": "BOOLEAN",
+    "answer_type_value": "Answer Yes or No",
+    "default_value": "N",
+    "answer_is_main": "Y",
+    "questionnaire_cancel": "Y"
+  }
+}

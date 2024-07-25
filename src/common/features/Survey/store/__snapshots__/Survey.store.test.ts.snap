@@ -1,0 +1,85 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Survey action type should generate bop action type 1`] = `
+Object {
+  "AddNextQuestion": "@@bop/addQuestion",
+  "DeleteApproval": "@@bop/deleteApproval",
+  "DeleteLastQuestion": "@@bop/deleteLastQuestion",
+  "MarkAsApproved": "@@bop/markAsApproved",
+  "ResetAnswerValues": "@@bop/resetAnswerValues",
+  "ResetQuestionnaire": "@@bop/resetQuestionnaire",
+  "SetAdequacyID": "@@bop/setAdequacyId",
+  "SetQuestionDeletingSpinner": "@@bop/setQuestionDeletingSpinner",
+  "SetQuestionnaireProgress": "@@bop/setQuestionnaireProgress",
+  "SetSpinner": "@@bop/setSpinner",
+  "ToggleAnswerRefusal": "@@bop/toggleAnswerRefusal",
+  "UpdateMultiSelect": "@@bop/updateMultiSelect",
+  "UpdateNestedMultiSelect": "@@bop/updateNestedMultiSelect",
+  "UpdateNestedSingleSelect": "@@bop/updateNestedSingleSelect",
+  "UpdateSingleSelect": "@@bop/updateSingleSelect",
+  "UpdateString": "@@bop/updateString",
+}
+`;
+
+exports[`Survey action type should generate idd action type 1`] = `
+Object {
+  "AddNextQuestion": "@@idd/addQuestion",
+  "DeleteApproval": "@@idd/deleteApproval",
+  "DeleteLastQuestion": "@@idd/deleteLastQuestion",
+  "MarkAsApproved": "@@idd/markAsApproved",
+  "ResetAnswerValues": "@@idd/resetAnswerValues",
+  "ResetQuestionnaire": "@@idd/resetQuestionnaire",
+  "SetAdequacyID": "@@idd/setAdequacyId",
+  "SetQuestionDeletingSpinner": "@@idd/setQuestionDeletingSpinner",
+  "SetQuestionnaireProgress": "@@idd/setQuestionnaireProgress",
+  "SetSpinner": "@@idd/setSpinner",
+  "ToggleAnswerRefusal": "@@idd/toggleAnswerRefusal",
+  "UpdateMultiSelect": "@@idd/updateMultiSelect",
+  "UpdateNestedMultiSelect": "@@idd/updateNestedMultiSelect",
+  "UpdateNestedSingleSelect": "@@idd/updateNestedSingleSelect",
+  "UpdateSingleSelect": "@@idd/updateSingleSelect",
+  "UpdateString": "@@idd/updateString",
+}
+`;
+
+exports[`Survey actions should generate bop actions 1`] = `
+Object {
+  "addNextQuestion": [Function],
+  "deleteApproval": [Function],
+  "deleteLastQuestion": [Function],
+  "markAsApproved": [Function],
+  "resetAnswers": [Function],
+  "resetQuestionnaire": [Function],
+  "setAdequacyID": [Function],
+  "setQuestionDeletingSpinner": [Function],
+  "setQuestionnaireProgress": [Function],
+  "setSpinner": [Function],
+  "toggleAnswerRefusal": [Function],
+  "updateMultiSelectAnswer": [Function],
+  "updateNestedMultiSelectAnswer": [Function],
+  "updateNestedSingleSelectAnswer": [Function],
+  "updateSingleSelectAnswer": [Function],
+  "updateStringAnswer": [Function],
+}
+`;
+
+exports[`Survey actions should generate idd actions 1`] = `
+Object {
+  "addNextQuestion": [Function],
+  "deleteApproval": [Function],
+  "deleteLastQuestion": [Function],
+  "markAsApproved": [Function],
+  "resetAnswers": [Function],
+  "resetQuestionnaire": [Function],
+  "setAdequacyID": [Function],
+  "setQuestionDeletingSpinner": [Function],
+  "setQuestionnaireProgress": [Function],
+  "setSpinner": [Function],
+  "toggleAnswerRefusal": [Function],
+  "updateMultiSelectAnswer": [Function],
+  "updateNestedMultiSelectAnswer": [Function],
+  "updateNestedSingleSelectAnswer": [Function],
+  "updateSingleSelectAnswer": [Function],
+  "updateStringAnswer": [Function],
+}
+`;

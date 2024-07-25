@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Form should render correctly 1`] = `
+.c0 {
+  height: 100%;
+}
+
+<div>
+  <form
+    class="c0"
+    role="form"
+  />
+  <div />
+</div>
+`;

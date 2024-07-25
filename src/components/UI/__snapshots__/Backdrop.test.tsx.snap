@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Backdrop should match snapshot 1`] = `
+.c0 {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: 300;
+  left: 0;
+  top: 0;
+  -webkit-backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  background-color: rgba(0,0,0,0.7);
+}
+
+<div>
+  <div
+    aria-label="backdrop"
+    class="c0"
+  />
+  <div />
+</div>
+`;

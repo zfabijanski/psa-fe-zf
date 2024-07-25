@@ -1,0 +1,594 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PruButton should render correctly 1`] = `
+.c0 {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  outline: 0px;
+  cursor: pointer;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 128px;
+  max-width: 400px;
+  height: 52px;
+  padding-left: 32px;
+  padding-right: 32px;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 20px;
+  text-align: center;
+  color: #FFFFFF;
+  background-color: #055A60;
+  border: 2px solid #055A60;
+}
+
+.c0 svg g,
+.c0 svg g path,
+.c0 svg g circle,
+.c0 svg g rect {
+  stroke: #FFFFFF;
+}
+
+.c0 svg g rect {
+  fill: #FFFFFF;
+}
+
+.c0 svg g tspan {
+  stroke: transparent;
+  fill: #FFFFFF;
+}
+
+.c0 svg > path {
+  stroke: #FFFFFF;
+}
+
+.c0:hover {
+  color: #FFFFFF;
+  background-color: #181818;
+  border: 2px solid #181818;
+}
+
+.c0:hover svg g,
+.c0:hover svg g path,
+.c0:hover svg g circle,
+.c0:hover svg g rect {
+  stroke: #FFFFFF;
+}
+
+.c0:hover svg g rect {
+  fill: #FFFFFF;
+}
+
+.c0:hover svg g tspan {
+  stroke: transparent;
+  fill: #FFFFFF;
+}
+
+.c0:hover svg > path {
+  stroke: #FFFFFF;
+}
+
+.c0:disabled {
+  cursor: initial;
+  color: #FFFFFF;
+  background-color: #9BBDBF;
+  border: 2px solid #9BBDBF;
+}
+
+.c0:disabled svg g,
+.c0:disabled svg g path,
+.c0:disabled svg g circle,
+.c0:disabled svg g rect {
+  stroke: #FFFFFF;
+}
+
+.c0:disabled svg g rect {
+  fill: #FFFFFF;
+}
+
+.c0:disabled svg g tspan {
+  stroke: transparent;
+  fill: #FFFFFF;
+}
+
+.c0:disabled svg > path {
+  stroke: #FFFFFF;
+}
+
+.c0:active:not(:disabled) {
+  -webkit-transform: translateY(1px);
+  -ms-transform: translateY(1px);
+  transform: translateY(1px);
+}
+
+<div>
+  <button
+    class="c0"
+    type="button"
+  />
+  <div />
+</div>
+`;
+
+exports[`PruButton should render the error button 1`] = `
+.c0 {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  outline: 0px;
+  cursor: pointer;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 128px;
+  max-width: 400px;
+  height: 52px;
+  padding-left: 32px;
+  padding-right: 32px;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 20px;
+  text-align: center;
+  color: #FFFFFF;
+  background-color: #D13C15;
+  border: 2px solid #D13C15;
+}
+
+.c0 svg g,
+.c0 svg g path,
+.c0 svg g circle,
+.c0 svg g rect {
+  stroke: #FFFFFF;
+}
+
+.c0 svg g rect {
+  fill: #FFFFFF;
+}
+
+.c0 svg g tspan {
+  stroke: transparent;
+  fill: #FFFFFF;
+}
+
+.c0 svg > path {
+  stroke: #FFFFFF;
+}
+
+.c0:hover {
+  color: #FFFFFF;
+  background-color: #D13C15;
+  border: 2px solid #D13C15;
+}
+
+.c0:hover svg g,
+.c0:hover svg g path,
+.c0:hover svg g circle,
+.c0:hover svg g rect {
+  stroke: #FFFFFF;
+}
+
+.c0:hover svg g rect {
+  fill: #FFFFFF;
+}
+
+.c0:hover svg g tspan {
+  stroke: transparent;
+  fill: #FFFFFF;
+}
+
+.c0:hover svg > path {
+  stroke: #FFFFFF;
+}
+
+.c0:disabled {
+  cursor: initial;
+  color: #FFFFFF;
+  background-color: #D13C15;
+  border: 2px solid #D13C15;
+}
+
+.c0:disabled svg g,
+.c0:disabled svg g path,
+.c0:disabled svg g circle,
+.c0:disabled svg g rect {
+  stroke: #FFFFFF;
+}
+
+.c0:disabled svg g rect {
+  fill: #FFFFFF;
+}
+
+.c0:disabled svg g tspan {
+  stroke: transparent;
+  fill: #FFFFFF;
+}
+
+.c0:disabled svg > path {
+  stroke: #FFFFFF;
+}
+
+.c0:active:not(:disabled) {
+  -webkit-transform: translateY(1px);
+  -ms-transform: translateY(1px);
+  transform: translateY(1px);
+}
+
+<button
+  class="c0"
+  type="button"
+/>
+`;
+
+exports[`PruButton should render the primary button 1`] = `
+.c0 {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  outline: 0px;
+  cursor: pointer;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 128px;
+  max-width: 400px;
+  height: 52px;
+  padding-left: 32px;
+  padding-right: 32px;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 20px;
+  text-align: center;
+  color: #FFFFFF;
+  background-color: #055A60;
+  border: 2px solid #055A60;
+}
+
+.c0 svg g,
+.c0 svg g path,
+.c0 svg g circle,
+.c0 svg g rect {
+  stroke: #FFFFFF;
+}
+
+.c0 svg g rect {
+  fill: #FFFFFF;
+}
+
+.c0 svg g tspan {
+  stroke: transparent;
+  fill: #FFFFFF;
+}
+
+.c0 svg > path {
+  stroke: #FFFFFF;
+}
+
+.c0:hover {
+  color: #FFFFFF;
+  background-color: #181818;
+  border: 2px solid #181818;
+}
+
+.c0:hover svg g,
+.c0:hover svg g path,
+.c0:hover svg g circle,
+.c0:hover svg g rect {
+  stroke: #FFFFFF;
+}
+
+.c0:hover svg g rect {
+  fill: #FFFFFF;
+}
+
+.c0:hover svg g tspan {
+  stroke: transparent;
+  fill: #FFFFFF;
+}
+
+.c0:hover svg > path {
+  stroke: #FFFFFF;
+}
+
+.c0:disabled {
+  cursor: initial;
+  color: #FFFFFF;
+  background-color: #9BBDBF;
+  border: 2px solid #9BBDBF;
+}
+
+.c0:disabled svg g,
+.c0:disabled svg g path,
+.c0:disabled svg g circle,
+.c0:disabled svg g rect {
+  stroke: #FFFFFF;
+}
+
+.c0:disabled svg g rect {
+  fill: #FFFFFF;
+}
+
+.c0:disabled svg g tspan {
+  stroke: transparent;
+  fill: #FFFFFF;
+}
+
+.c0:disabled svg > path {
+  stroke: #FFFFFF;
+}
+
+.c0:active:not(:disabled) {
+  -webkit-transform: translateY(1px);
+  -ms-transform: translateY(1px);
+  transform: translateY(1px);
+}
+
+<button
+  class="c0"
+  type="button"
+/>
+`;
+
+exports[`PruButton should render the primaryBlack button 1`] = `
+.c0 {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  outline: 0px;
+  cursor: pointer;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 128px;
+  max-width: 400px;
+  height: 52px;
+  padding-left: 32px;
+  padding-right: 32px;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 20px;
+  text-align: center;
+  color: #FFFFFF;
+  background-color: #181818;
+  border: 2px solid #181818;
+}
+
+.c0 svg g,
+.c0 svg g path,
+.c0 svg g circle,
+.c0 svg g rect {
+  stroke: #FFFFFF;
+}
+
+.c0 svg g rect {
+  fill: #FFFFFF;
+}
+
+.c0 svg g tspan {
+  stroke: transparent;
+  fill: #FFFFFF;
+}
+
+.c0 svg > path {
+  stroke: #FFFFFF;
+}
+
+.c0:hover {
+  color: #FFFFFF;
+  background-color: #055A60;
+  border: 2px solid #055A60;
+}
+
+.c0:hover svg g,
+.c0:hover svg g path,
+.c0:hover svg g circle,
+.c0:hover svg g rect {
+  stroke: #FFFFFF;
+}
+
+.c0:hover svg g rect {
+  fill: #FFFFFF;
+}
+
+.c0:hover svg g tspan {
+  stroke: transparent;
+  fill: #FFFFFF;
+}
+
+.c0:hover svg > path {
+  stroke: #FFFFFF;
+}
+
+.c0:disabled {
+  cursor: initial;
+  color: #F8F8F8;
+  background-color: #999999;
+  border: 2px solid #999999;
+}
+
+.c0:disabled svg g,
+.c0:disabled svg g path,
+.c0:disabled svg g circle,
+.c0:disabled svg g rect {
+  stroke: #F8F8F8;
+}
+
+.c0:disabled svg g rect {
+  fill: #F8F8F8;
+}
+
+.c0:disabled svg g tspan {
+  stroke: transparent;
+  fill: #F8F8F8;
+}
+
+.c0:disabled svg > path {
+  stroke: #F8F8F8;
+}
+
+.c0:active:not(:disabled) {
+  -webkit-transform: translateY(1px);
+  -ms-transform: translateY(1px);
+  transform: translateY(1px);
+}
+
+<button
+  class="c0"
+  type="button"
+/>
+`;
+
+exports[`PruButton should render the secondary button 1`] = `
+.c0 {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  outline: 0px;
+  cursor: pointer;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 128px;
+  max-width: 400px;
+  height: 52px;
+  padding-left: 32px;
+  padding-right: 32px;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 20px;
+  text-align: center;
+  color: #181818;
+  background-color: #FFFFFF;
+  border: 2px solid #E3E3E3;
+}
+
+.c0 svg g,
+.c0 svg g path,
+.c0 svg g circle,
+.c0 svg g rect {
+  stroke: #181818;
+}
+
+.c0 svg g rect {
+  fill: #181818;
+}
+
+.c0 svg g tspan {
+  stroke: transparent;
+  fill: #181818;
+}
+
+.c0 svg > path {
+  stroke: #181818;
+}
+
+.c0:hover {
+  color: #055A60;
+  background-color: #FFFFFF;
+  border: 2px solid #055A60;
+}
+
+.c0:hover svg g,
+.c0:hover svg g path,
+.c0:hover svg g circle,
+.c0:hover svg g rect {
+  stroke: #055A60;
+}
+
+.c0:hover svg g rect {
+  fill: #055A60;
+}
+
+.c0:hover svg g tspan {
+  stroke: transparent;
+  fill: #055A60;
+}
+
+.c0:hover svg > path {
+  stroke: #055A60;
+}
+
+.c0:disabled {
+  cursor: initial;
+  color: #999999;
+  background-color: #F3F3F3;
+  border: 2px solid #E3E3E3;
+}
+
+.c0:disabled svg g,
+.c0:disabled svg g path,
+.c0:disabled svg g circle,
+.c0:disabled svg g rect {
+  stroke: #999999;
+}
+
+.c0:disabled svg g rect {
+  fill: #999999;
+}
+
+.c0:disabled svg g tspan {
+  stroke: transparent;
+  fill: #999999;
+}
+
+.c0:disabled svg > path {
+  stroke: #999999;
+}
+
+.c0:active:not(:disabled) {
+  -webkit-transform: translateY(1px);
+  -ms-transform: translateY(1px);
+  transform: translateY(1px);
+}
+
+<button
+  class="c0"
+  type="button"
+/>
+`;

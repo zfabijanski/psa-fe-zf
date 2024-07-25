@@ -1,0 +1,46 @@
+{
+  "questionnaire_code": "QUSE_1019",
+  "adequacy_version": "2.0.0",
+  "sections_code": "SECTION_B",
+  "sections_value": "DOCHÓD",
+  "question_type_code": "SINGLE",
+  "question_data_type_value": "Single",
+  "answer_type_code": "ALL",
+  "answer_type_value": "Must by marked with all the answers",
+  "question_code": "ADQ_QUE_10_1",
+  "question_value": "Jaka jest łączna wartość dochodu w Twoim gospodarstwie domowym? ",
+  "question_tooltip_code": null,
+  "question_tooltip_value": null,
+  "prompt_code": null,
+  "prompt_value": null,
+  "order_no": 16,
+  "suborder_no": 0,
+  "answers": [
+    {
+      "quse_anse_map_code": "QUAN_61480",
+      "answer_code": "ADQ_ANS_NUMBER_ND",
+      "answer_value": "value",
+      "answer_visible": "Y",
+      "answer_data_type_code": "INTEGER",
+      "answer_patterns_code": "SOSY-1001",
+      "answer_patterns_value": "^[0-9]*[1-9][0-9]*$",
+      "answer_sufix": "zł",
+      "default_value": null,
+      "answer_lv_code": null,
+      "answer_lv_value": null,
+      "answer_is_main": "N",
+      "order_no": 1
+    }
+  ],
+  "answer_cancel": {
+    "quse_anse_map_code": "QUAN_61481",
+    "answer_code": "ADQ_ANS_DENY",
+    "answer_value": "Odmowa odpowiedzi",
+    "answer_data_type_code": "BOOLEAN",
+    "answer_type_code": "BOOLEAN",
+    "answer_type_value": "Answer Yes or No",
+    "default_value": "N",
+    "answer_is_main": "Y",
+    "questionnaire_cancel": "Y"
+  }
+}

@@ -1,0 +1,132 @@
+@font-face {
+    font-family: "Nunito Sans";
+    font-weight: 200;
+    font-style: normal;
+    src: url("./fonts/NunitoSans-200.woff2") format("woff2"), url("./fonts/NunitoSans-200.ttf") format("truetype");
+  }
+  
+  @font-face {
+    font-family: "Nunito Sans";
+    font-weight: 300;
+    font-style: normal;
+    src: url("./fonts/NunitoSans-300.woff2") format("woff2"), url("./fonts/NunitoSans-300.ttf") format("truetype");
+  }
+  
+  @font-face {
+    font-family: "Nunito Sans";
+    font-weight: 400;
+    font-style: normal;
+    src: url("./fonts/NunitoSans-400.woff2") format("woff2"), url("./fonts/NunitoSans-400.ttf") format("truetype");
+  }
+  
+  @font-face {
+    font-family: "Nunito Sans";
+    font-weight: 600;
+    font-style: normal;
+    src: url("./fonts/NunitoSans-600.woff2") format("woff2"), url("./fonts/NunitoSans-600.ttf") format("truetype");
+  }
+  
+  @font-face {
+    font-family: "Nunito Sans";
+    font-weight: 700;
+    font-style: normal;
+    src: url("./fonts/NunitoSans-700.woff2") format("woff2"), url("./fonts/NunitoSans-700.ttf") format("truetype");
+  }
+  
+  @font-face {
+    font-family: "Nunito Sans";
+    font-weight: 800;
+    font-style: normal;
+    src: url("./fonts/NunitoSans-800.woff2") format("woff2"), url("./fonts/NunitoSans-800.ttf") format("truetype");
+  }
+  
+  @font-face {
+    font-family: "Nunito Sans";
+    font-weight: 900;
+    font-style: normal;
+    src: url("./fonts/NunitoSans-900.woff2") format("woff2"), url("./fonts/NunitoSans-900.ttf") format("truetype");
+  }
+  
+  @font-face {
+    font-family: "Nunito Sans";
+    font-weight: 200;
+    font-style: italic;
+    src: url("./fonts/NunitoSans-200-italic.woff2") format("woff2"),
+      url("./fonts/NunitoSans-200-italic.ttf") format("truetype");
+  }
+  
+  @font-face {
+    font-family: "Nunito Sans";
+    font-weight: 300;
+    font-style: italic;
+    src: url("./fonts/NunitoSans-300-italic.woff2") format("woff2"),
+      url("./fonts/NunitoSans-300-italic.ttf") format("truetype");
+  }
+  
+  @font-face {
+    font-family: "Nunito Sans";
+    font-weight: 400;
+    font-style: italic;
+    src: url("./fonts/NunitoSans-400-italic.woff2") format("woff2"),
+      url("./fonts/NunitoSans-400-italic.ttf") format("truetype");
+  }
+  
+  @font-face {
+    font-family: "Nunito Sans";
+    font-weight: 600;
+    font-style: italic;
+    src: url("./fonts/NunitoSans-600-italic.woff2") format("woff2"),
+      url("./fonts/NunitoSans-600-italic.ttf") format("truetype");
+  }
+  
+  @font-face {
+    font-family: "Nunito Sans";
+    font-weight: 700;
+    font-style: italic;
+    src: url("./fonts/NunitoSans-700-italic.woff2") format("woff2"),
+      url("./fonts/NunitoSans-700-italic.ttf") format("truetype");
+  }
+  
+  @font-face {
+    font-family: "Nunito Sans";
+    font-weight: 800;
+    font-style: italic;
+    src: url("./fonts/NunitoSans-800-italic.woff2") format("woff2"),
+      url("./fonts/NunitoSans-800-italic.ttf") format("truetype");
+  }
+  
+  @font-face {
+    font-family: "Nunito Sans";
+    font-weight: 900;
+    font-style: italic;
+    src: url("./fonts/NunitoSans-900-italic.woff2") format("woff2"),
+      url("./fonts/NunitoSans-900-italic.ttf") format("truetype");
+  }
+  
+
+@font-face {
+  font-family: "pru-internal_iconfont";
+  src: url("fonts/pru-internal_iconfont.eot?b2gblx");
+  src: url("fonts/pru-internal_iconfont.eot?b2gblx#iefix") format("embedded-opentype"),
+  url("fonts/pru-internal_iconfont.ttf?b2gblx") format("truetype"),
+  url("fonts/pru-internal_iconfont.woff?b2gblx") format("woff"),
+  url("fonts/pru-internal_iconfont.svg?b2gblx#pru-internal_iconfont") format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="pru-iconset_"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: "pru-internal_iconfont" !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

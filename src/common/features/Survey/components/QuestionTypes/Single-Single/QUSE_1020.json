@@ -1,0 +1,61 @@
+{
+  "questionnaire_code": "QUSE_1020",
+  "adequacy_version": "2.0.0",
+  "sections_code": "SECTION_C",
+  "sections_value": "WYDATKI W GOSPODARSTIWE DOMOWYM",
+  "question_type_code": "SINGLE",
+  "question_data_type_value": "Single",
+  "answer_type_code": "SINGLE",
+  "answer_type_value": "Single answer",
+  "question_code": "ADQ_QUE_11",
+  "question_value": "Czy masz kredyty lub inne zobowiązania finansowe?",
+  "question_tooltip_code": "QTPC-1003",
+  "question_tooltip_value": "Zobowiązania finansowe to m.in.:\n•\tKredyty hipoteczne (kwota pozostała do spłaty),\n•\tKredyty i pożyczki gotówkowe (kwota pozostała do spłaty),\n•\tWykorzystany limit na karcie kredytowej,\n•\tWykorzystany limit w linii debetowej na koncie,\n•\tInne pożyczki (od rodziny, przyjaciół),\n•\tInne zobowiązania (wobec ZUS, US czy innych instytucji lub osób).\nUwaga: w pierwszym polu wpisujemy przybliżoną łączną kwotę zobowiązań, a w drugim – przybliżoną miesięczną ratę wszystkich zobowiązań (przy kartach kredytowych i liniach debetowych na koncie jako zobowiązanie miesięczne powinniśmy przyjąć minimum 5% aktualnego zadłużenia, gdyż takiej minimalnej miesięcznej wpłaty zazwyczaj wymaga od nas bank).\nWarto wziąć pod uwagę uprawnienia banków do wypowiedzenia umowy kredytowej w przypadku śmierci kredytobiorcy.",
+  "prompt_code": null,
+  "prompt_value": null,
+  "order_no": 17,
+  "suborder_no": 0,
+  "answers": [
+    {
+      "quse_anse_map_code": "QUAN_61482",
+      "answer_code": "ADQ_ANS_YES",
+      "answer_value": "Tak",
+      "answer_visible": "Y",
+      "answer_data_type_code": "BOOLEAN",
+      "answer_patterns_code": null,
+      "answer_patterns_value": null,
+      "answer_sufix": null,
+      "default_value": "N",
+      "answer_lv_code": null,
+      "answer_lv_value": null,
+      "answer_is_main": "N",
+      "order_no": 1
+    },
+    {
+      "quse_anse_map_code": "QUAN_61483",
+      "answer_code": "ADQ_ANS_NO",
+      "answer_value": "Nie",
+      "answer_visible": "Y",
+      "answer_data_type_code": "BOOLEAN",
+      "answer_patterns_code": null,
+      "answer_patterns_value": null,
+      "answer_sufix": null,
+      "default_value": "N",
+      "answer_lv_code": null,
+      "answer_lv_value": null,
+      "answer_is_main": "N",
+      "order_no": 2
+    }
+  ],
+  "answer_cancel": {
+    "quse_anse_map_code": "QUAN_61484",
+    "answer_code": "ADQ_ANS_DENY",
+    "answer_value": "Odmowa odpowiedzi",
+    "answer_data_type_code": "BOOLEAN",
+    "answer_type_code": "BOOLEAN",
+    "answer_type_value": "Answer Yes or No",
+    "default_value": "N",
+    "answer_is_main": "Y",
+    "questionnaire_cancel": "Y"
+  }
+}

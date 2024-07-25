@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Function mapProductsConfigToProductCoversLimits should map products config to product covers limits 1`] = `
+Object {
+  "1": Object {},
+}
+`;

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="203" height="165" viewBox="0 0 203 165">
+    <g fill="none" fill-rule="evenodd">
+        <path fill="#BEBEBE" d="M0 0h203v165H0z"/>
+        <g fill-rule="nonzero" transform="translate(43 24)">
+            <rect width="118" height="118" fill="#FFF" opacity=".5" rx="59"/>
+            <g stroke="#222" stroke-linecap="round" stroke-width="2">
+                <path d="M45 59.762h26.985M58.517 45.483v27.034"/>
+            </g>
+        </g>
+    </g>
+</svg>

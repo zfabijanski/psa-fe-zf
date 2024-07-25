@@ -1,0 +1,61 @@
+{
+  "questionnaire_code": "QUSE_1023",
+  "adequacy_version": "2.0.0",
+  "sections_code": "SECTION_C",
+  "sections_value": "WYDATKI W GOSPODARSTIWE DOMOWYM",
+  "question_type_code": "SINGLE",
+  "question_data_type_value": "Single",
+  "answer_type_code": "SINGLE",
+  "answer_type_value": "Single answer",
+  "question_code": "ADQ_QUE_12",
+  "question_value": "Jakie są Twoje miesięczne wydatki związane z innymi produktami finansowymi? (np. składki ubezpieczeniowe, plany emerytalne i inwestycyjne)",
+  "question_tooltip_code": "QTPC-1004",
+  "question_tooltip_value": "Należy pamiętać, aby wszelkie wydatki sprowadzić do uśrednionego miesięcznego poziomu.\nInne niż kredyty i pożyczki produkty finansowe to między innymi:\n•\tUbezpieczenie z ubezpieczeniowym funduszem kapitałowym,\n•\tUbezpieczenie na życie lub na życie i dożycie ,\n•\tIndywidualne Konto Emerytalne (IKE),\n•\tIndywidualne Konto Zabezpieczenia Emerytalnego (IKZE),\n•\tZakup jednostek funduszy inwestycyjnych,\n•\tObligacje,\n•\tAkcje,\n•\tWpłaty na konto oszczędnościowe lub lokaty.",
+  "prompt_code": null,
+  "prompt_value": null,
+  "order_no": 20,
+  "suborder_no": 0,
+  "answers": [
+    {
+      "quse_anse_map_code": "QUAN_61489",
+      "answer_code": "ADQ_ANS_NUMBER_ND",
+      "answer_value": "value",
+      "answer_visible": "Y",
+      "answer_data_type_code": "INTEGER",
+      "answer_patterns_code": "SOSY-1001",
+      "answer_patterns_value": "^[0-9]*[1-9][0-9]*$",
+      "answer_sufix": "zł",
+      "default_value": null,
+      "answer_lv_code": null,
+      "answer_lv_value": null,
+      "answer_is_main": "N",
+      "order_no": 1
+    },
+    {
+      "quse_anse_map_code": "QUAN_61490",
+      "answer_code": "ADQ_ANS_OUTCOME_6",
+      "answer_value": "Brak wydatków",
+      "answer_visible": "Y",
+      "answer_data_type_code": "BOOLEAN",
+      "answer_patterns_code": null,
+      "answer_patterns_value": null,
+      "answer_sufix": null,
+      "default_value": "N",
+      "answer_lv_code": null,
+      "answer_lv_value": null,
+      "answer_is_main": "Y",
+      "order_no": 2
+    }
+  ],
+  "answer_cancel": {
+    "quse_anse_map_code": "QUAN_61491",
+    "answer_code": "ADQ_ANS_DENY",
+    "answer_value": "Odmowa odpowiedzi",
+    "answer_data_type_code": "BOOLEAN",
+    "answer_type_code": "BOOLEAN",
+    "answer_type_value": "Answer Yes or No",
+    "default_value": "N",
+    "answer_is_main": "Y",
+    "questionnaire_cancel": "Y"
+  }
+}

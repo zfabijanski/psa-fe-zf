@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PruLabel should render the component 1`] = `
+.c0 {
+  font-weight: 700;
+  font-size: 20px;
+  font-stretch: normal;
+  line-height: 28px;
+  color: #232424;
+  margin-bottom: 32px;
+}
+
+<h4
+  class="c0"
+/>
+`;

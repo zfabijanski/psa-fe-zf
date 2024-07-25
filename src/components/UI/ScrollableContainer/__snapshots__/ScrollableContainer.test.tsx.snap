@@ -1,0 +1,48 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ScrollableContainer should match snapshot 1`] = `
+.c0 {
+  height: 100%;
+  width: 100%;
+  overflow-y: auto;
+  -webkit-scrollbar-color: #9b9b9b transparent;
+  -moz-scrollbar-color: #9b9b9b transparent;
+  -ms-scrollbar-color: #9b9b9b transparent;
+  scrollbar-color: #9b9b9b transparent;
+  -webkit-scrollbar-width: thin;
+  -moz-scrollbar-width: thin;
+  -ms-scrollbar-width: thin;
+  scrollbar-width: thin;
+  -webkit-scrollbar-height: thin;
+  -moz-scrollbar-height: thin;
+  -ms-scrollbar-height: thin;
+  scrollbar-height: thin;
+}
+
+.c0::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+.c0::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.c0::-webkit-scrollbar-thumb {
+  background: #9b9b9b;
+}
+
+.c0::-webkit-scrollbar {
+  width: 6px;
+}
+
+.c0::-webkit-scrollbar {
+  height: 6px;
+}
+
+<div>
+  <div
+    class="c0"
+  />
+  <div />
+</div>
+`;

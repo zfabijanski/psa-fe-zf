@@ -1,0 +1,13 @@
+{
+  "trailingComma": "es5",
+  "tabWidth": 2,
+  "overrides": [
+    {
+      "files": "src/translations/*.ts",
+      "options": {
+        "printWidth": 10000,
+        "quoteProps": "consistent"
+      }
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="150" height="150" viewBox="0 0 150 150">
+    <g fill="none" fill-rule="evenodd">
+        <rect width="150" height="150" fill="#EDEFF0" rx="75"/>
+        <g stroke-linecap="round" stroke-linejoin="round" stroke-width="6">
+            <g stroke="#333">
+                <path d="M73.5 114V78"/>
+                <path stroke-dasharray="3,9" d="M86.5 113V69M99.5 113V61"/>
+                <path d="M48 113V94M60 113V85"/>
+            </g>
+            <path stroke="#C00" stroke-dasharray="3,9" d="M45 77c25.932-10.884 42.932-24.218 51-40"/>
+            <path stroke="#C00" d="M83 39.118L97.571 35 101 49"/>
+        </g>
+    </g>
+</svg>

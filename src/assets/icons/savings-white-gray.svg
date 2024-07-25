@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50">
+    <g fill="none" fill-rule="evenodd">
+        <path fill="#999" d="M0 0h50v50H0z"/>
+        <g fill-rule="nonzero" transform="translate(2.4 10)">
+            <ellipse cx="23.4" cy="34.3" fill="#E4E4E4" rx="18" ry="3.1" style="mix-blend-mode:multiply"/>
+            <g stroke="#FFF" stroke-linecap="round" stroke-linejoin="round">
+                <path fill="#FFF" d="M35.15 26.241L37.124 33h-4.08l-4.795-4.404a26.93 26.93 0 0 1-4.727.413c-1.634 0-3.155-.144-4.557-.415L15.36 33h-5.44l1.191-8.162C8.545 22.455 7.2 19.241 7.2 15.704 7.2 8.357 15.726 2.4 26.243 2.4c4.39 0 7.96 1.038 10.63 2.783 3.538 2.313 5.492 5.868 5.677 9.89l2.45.631-1.075 6.653-6.165 2.182a18.217 18.217 0 0 1-2.61 1.702zM17.012 9.637c3.258-1.346 6.595-1.773 10.04-1.285a1.5 1.5 0 1 0 .421-2.97c-3.977-.564-7.856-.068-11.607 1.483a1.5 1.5 0 1 0 1.146 2.772zM37.5 16.2a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"/>
+                <path stroke-width="2" d="M6.356 15.652C-.4 15.652 1.231 11 3.9 11c2.88 0 3.9 7-3.3 7"/>
+                <path fill="#FFF" stroke-width="3" d="M37.002 7.8L39.6.877c-2.598-.923-4.998.461-7.2 4.154"/>
+            </g>
+        </g>
+        <circle cx="24" cy="11" r="6" fill="#FFF" fill-rule="nonzero"/>
+    </g>
+</svg>
