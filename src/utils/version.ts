@@ -1,3 +1,4 @@
+import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 import axios from "axios";
 
 interface IWindowWithVersion extends Window {
@@ -33,3 +34,20 @@ export const setFakeVersion = (version: string) => {
   // tslint:disable-next-line: no-console
   console.log((window as IWindowWithVersion).loadedVersion);
 };
+
+export const versionApi = createApi({
+  reducerPath: "version",
+  baseQuery: fetchBaseQuery({
+    baseUrl: process.env.PUBLIC_URL,
+    headers: {
+      Accept: "application/json",
+    },
+  }),
+  endpoints: (builder) => ({
+    getVersion: builder.query<{ version: string }, void>({
+      query: () => `/info.json?${new Date().getTime()}`,
+    }),
+  }),
+});
+
+export const { useGetVersionQuery } = versionApi;

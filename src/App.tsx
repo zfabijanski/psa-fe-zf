@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { connect } from "react-redux";
 import styled, { ThemeProvider } from "styled-components";
 import { Normalize } from "styled-normalize";
@@ -12,7 +12,7 @@ import FullscreenSpinnerContainer from "./components/UI/FullscreenSpinner/Fullsc
 import { Modal } from "./components/UI/Modal";
 import OneTab from "./features/OneTab/OneTab";
 import I18nProvider from "./I18nProvider";
-import { init } from "./services/init";
+import { init, useInit } from "./services/init";
 import { initSession } from "./services/login";
 import { getTranslations, Locale, Status } from "slices/translations";
 import { getApiVersion } from "./services/versions";
@@ -52,28 +52,17 @@ const AppErrorContainer = styled(AppContainer)`
 `;
 
 function App(props: IProps) {
-  const [apiError, setApiError] = useState<IApiError>();
+  const { error, isLoading } = useInit();
 
   useEffect(() => {
-    props.showFullscreenSpinner();
-    props.getApiVersion();
+    if (!isLoading) {
+      redirect("/", true);
+      props.hideFullscreenSpinner();
+    }
+  }, [isLoading]);
 
-    Promise.resolve()
-      .then(() => props.getTranslations(Locale.PL))
-      .then(() => props.initSession(setApiError))
-      .then(() => props.init())
-      .then(() => redirect("/", true))
-      .catch((err) => {
-        const error: IApiError = err?.toJSON?.() ?? err;
-
-        if (error && error.status !== 401) {
-          setApiError(error);
-        }
-      })
-      .finally(() => props.hideFullscreenSpinner());
-
-    // It should mimic componentDidMount
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+  useEffect(() => {
+    props.getTranslations(Locale.PL);
   }, []);
 
   return (
@@ -82,12 +71,12 @@ function App(props: IProps) {
         <Normalize />
         <GlobalStyles />
 
-        {apiError ? (
+        {error ? (
           <PageLayout>
             <AppErrorContainer>
-              <TypoTitle>{apiError.status}</TypoTitle>
-              <TypoH2>{apiError.message}</TypoH2>
-              <TypoH4>{apiError.uuid}</TypoH4>
+              <TypoTitle>{error.status}</TypoTitle>
+              <TypoH2>{error.message}</TypoH2>
+              <TypoH4>{error.uuid}</TypoH4>
             </AppErrorContainer>
           </PageLayout>
         ) : (

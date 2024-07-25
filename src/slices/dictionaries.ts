@@ -1,5 +1,5 @@
-import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { api } from "utils/api";
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 import { KeyValuePair } from "utils/types";
 
 export interface IDictionaryItem {
@@ -27,13 +27,24 @@ const initialState: State = {
   status: Status.Default,
 };
 
+export const dictionariesApi = createApi({
+  reducerPath: "dictionariesApi",
+  baseQuery: fetchBaseQuery({ baseUrl: "/psao/api/statuses" }),
+  endpoints: (builder) => ({
+    getDictionaries: builder.query<KeyValuePair<Dictionary>, void>({
+      query: () => "/",
+      transformResponse: ({ response }: { response: IDictionaryItem[] }) => {
+        console.log("@@@@@dict", response);
+        return transformDictionary(response);
+      },
+    }),
+  }),
+});
+
 export const dictionariesSlice = createSlice({
   name: "dictionaries",
   initialState,
   reducers: {
-    requestDictionaries: (state) => {
-      state.status = Status.Fetching;
-    },
     addDictionariesSuccess: (
       state,
       action: PayloadAction<KeyValuePair<Dictionary>>
@@ -48,53 +59,36 @@ export const dictionariesSlice = createSlice({
       state.status = Status.Error;
     },
   },
+  extraReducers(builder) {
+    builder.addMatcher(
+      dictionariesApi.endpoints.getDictionaries.matchPending,
+      (state) => {
+        state.status = Status.Fetching;
+      }
+    );
+
+    builder.addMatcher(
+      dictionariesApi.endpoints.getDictionaries.matchFulfilled,
+      (state, action) => {
+        state.items = {
+          ...state.items,
+          ...action.payload,
+        };
+        state.status = Status.Loaded;
+      }
+    );
+  },
 });
 
-export const {
-  requestDictionaries,
-  addDictionariesSuccess,
-  addDictionariesFailure,
-} = dictionariesSlice.actions;
-
 export const transformDictionary = (dictionaryItems: IDictionaryItem[]) => {
-  return dictionaryItems.reduce<Dictionary>((acc, currValue) => {
+  const dictionary = dictionaryItems.reduce<Dictionary>((acc, currValue) => {
     acc[currValue.id] = currValue;
     return acc;
   }, {});
+
+  return {
+    statuses: dictionary,
+  };
 };
 
-export const loadDictionaries = createAsyncThunk(
-  "dictionaries/loadDictionaries",
-  async (_, { dispatch }) => {
-    const dictionariesInfo = [
-      {
-        name: "statuses",
-        path: "api/statuses",
-      },
-    ];
-    const fetchDictionary = (_: string, path: string) =>
-      api
-        .get<IDictionaryItem[]>(path, undefined, true)
-        .then(transformDictionary);
-
-    dispatch(requestDictionaries());
-
-    return Promise.all(
-      dictionariesInfo.map(({ name, path }) => fetchDictionary(name, path))
-    )
-      .then((results) => {
-        const dictionaries = results.reduce<KeyValuePair<Dictionary>>(
-          (acc, dictionary, index) => ({
-            ...acc,
-            [dictionariesInfo[index].name]: dictionary,
-          }),
-          {}
-        );
-        dispatch(addDictionariesSuccess(dictionaries));
-      })
-      .catch((error) => {
-        dispatch(addDictionariesFailure());
-        throw error;
-      });
-  }
-);
+export const { useGetDictionariesQuery } = dictionariesApi;

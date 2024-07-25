@@ -19,7 +19,7 @@ import {
   showFullscreenSpinner,
 } from "./fullscreenSpinner";
 import { getCurrentMeetingId, setCurrentMeetingOutdated } from "./meetings";
-import { getCurrentAgentNo } from "./auth";
+import { authApi } from "./auth";
 import { api } from "utils/api";
 import { redirect } from "utils/router";
 
@@ -119,7 +119,9 @@ const onStopQuestionnaireConfirm: GenerateSurveyThunksConfig["handlers"]["onStop
             onClick: () => {
               dispatch(showFullscreenSpinner());
               const meetingId = getCurrentMeetingId(getState().meetings);
-              const agentNo = getCurrentAgentNo(getState().auth);
+              const agentNo = authApi.useGetAgentQuery(undefined, {
+                skip: !getState().auth.info,
+              }).data?.agentNo;
               const adequacyId = getState().bop.adequacy_id;
               api
                 .post(getUrl("meeting-denied"), {

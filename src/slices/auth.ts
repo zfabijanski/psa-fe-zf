@@ -1,4 +1,5 @@
-import { createSlice, createSelector, PayloadAction } from "@reduxjs/toolkit";
+import { createSlice, createSelector } from "@reduxjs/toolkit";
+import { authApi } from "./auth.thunks";
 
 const loginUrl = "/home";
 
@@ -37,16 +38,23 @@ export const authSlice = createSlice({
   name: "auth",
   initialState,
   reducers: {
-    getAgentSuccess(state, action: PayloadAction<IAuthInfo>) {
-      state.info = action.payload;
-      state.loginFailed = false;
-    },
     signOutSuccess(state) {
       state.info = undefined;
     },
     signInFailure(state) {
       state.loginFailed = true;
     },
+  },
+  extraReducers(builder) {
+    builder.addMatcher(
+      authApi.endpoints.getAgent.matchFulfilled,
+      (state, action) => {
+        console.log("@@@@@matcher", action.payload, state);
+
+        state.info = action.payload;
+        state.loginFailed = false;
+      }
+    );
   },
 });
 
@@ -55,14 +63,12 @@ export const getCurrentAgentNo = createSelector(
   (info) => info && info.agentNo
 );
 
-export const { getAgentSuccess, signOutSuccess, signInFailure } =
-  authSlice.actions;
+export const { signOutSuccess, signInFailure } = authSlice.actions;
 
 export * from "./auth.thunks";
 
 // @TODO REMOVE
 export enum LoginActionType {
-  GetAgentSuccess = "auth/getAgentSuccess",
   SignOutSuccess = "auth/signOutSuccess",
   SignInFailure = "auth/signInFailure",
 }

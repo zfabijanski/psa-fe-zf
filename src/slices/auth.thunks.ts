@@ -1,4 +1,5 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
+import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 import { mapAgentPositionToPositionName } from "../mapper/agent/agent";
 import { api } from "../utils/api";
 import { newErrorModal } from "../utils/confirmModalFactory";
@@ -9,12 +10,7 @@ import {
 } from "slices/fullscreenSpinner";
 import { init } from "../services/init";
 import { showModal } from "slices/modal";
-import {
-  getAgentSuccess,
-  signInFailure,
-  signOutSuccess,
-  IAuthInfo,
-} from "./auth";
+import { signInFailure, signOutSuccess, IAuthInfo } from "./auth";
 import { RootState } from "AppStore";
 
 const loginUrl = "/home";
@@ -24,6 +20,46 @@ const isTrainEnv = window.location.host.includes("train.");
 export const redirectToAgentPortalLandingPage = () => {
   window.location.pathname = "/home";
 };
+
+export const authApi = createApi({
+  reducerPath: "authApi",
+  baseQuery: fetchBaseQuery({ baseUrl: "/psao/api/auth" }),
+  endpoints: (builder) => ({
+    init: builder.query<void, void>({
+      query: () => ({
+        url: "/init",
+        method: "POST",
+      }),
+    }),
+    invalidateOtherSessions: builder.mutation<void, void>({
+      query: () => "/invalidateothersessions",
+    }),
+    signOut: builder.mutation<void, void>({
+      query: () => "/session",
+    }),
+    prolongUserSession: builder.mutation<void, void>({
+      query: () => "/prolong",
+    }),
+    getAgent: builder.query<IAuthInfo, void>({
+      query: () => "/agent",
+      transformResponse: ({ response }: { response: IAuthInfo }) => ({
+        ...response,
+        position: mapAgentPositionToPositionName(
+          response.brand,
+          response.position
+        ),
+      }),
+    }),
+  }),
+});
+
+export const {
+  useInitQuery,
+  useGetAgentQuery,
+  useSignOutMutation,
+  useProlongUserSessionMutation,
+  useInvalidateOtherSessionsMutation,
+} = authApi;
 
 export const invalidateOtherSessions = createAsyncThunk(
   "auth/invalidateOtherSessions",
@@ -74,21 +110,6 @@ export const signOut = createAsyncThunk(
 export const prolongUserSession = createAsyncThunk(
   "auth/prolongUserSession",
   () => api.get("api/auth/prolong")
-);
-
-export const getAgent = createAsyncThunk(
-  "auth/getAgent",
-  async (_, { dispatch }) => {
-    return api
-      .get<IAuthInfo>("/api/auth/agent")
-      .then((agent) => ({
-        ...agent,
-        position: mapAgentPositionToPositionName(agent.brand, agent.position),
-      }))
-      .then((data) => {
-        dispatch(getAgentSuccess(data));
-      });
-  }
 );
 
 export const redirectAndInformIfSessionExpired = createAsyncThunk(

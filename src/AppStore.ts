@@ -9,7 +9,7 @@ import {
 import { TypedUseSelectorHook, useDispatch, useSelector } from "react-redux";
 
 // slices
-import { authSlice } from "slices/auth";
+import { authApi, authSlice } from "slices/auth";
 import { auxiliaryCalculatorSlice } from "slices/auxiliaryCalculator";
 import { bopDropdownListsSlice } from "slices/bopDropdownLists";
 import { bopSlice, actions as bopActions } from "slices/bop";
@@ -17,7 +17,7 @@ import { businessWithPrudentialSlice } from "slices/businessWithPrudential";
 import { calculatorSlice } from "slices/calculator";
 import { confirmModalSlice } from "slices/confirmModal";
 import { coversConfigSlice } from "slices/coversConfig";
-import { dictionariesSlice } from "slices/dictionaries";
+import { dictionariesApi, dictionariesSlice } from "slices/dictionaries";
 import { fullscreenSpinnerSlice } from "slices/fullscreenSpinner";
 import { fundRiskProfilesConfigSlice } from "slices/fundRiskProfilesConfig";
 import { iddSlice, actions as iddActions } from "slices/idd";
@@ -31,9 +31,11 @@ import { productsSlice } from "slices/products";
 import { quarterlyIncomeCalculatorSlice } from "slices/quarterlyIncomeCalculator";
 import { translationsSlice } from "slices/translations";
 import { illustrationsSlice } from "slices/illustrations";
+import { versionApi } from "utils/version";
 
 export const rootReducer = combineReducers({
   auth: authSlice.reducer,
+  authApi: authApi.reducer,
   auxiliaryCalculator: auxiliaryCalculatorSlice.reducer,
   bop: bopSlice.reducer,
   bopDropdownLists: bopDropdownListsSlice.reducer,
@@ -55,6 +57,8 @@ export const rootReducer = combineReducers({
   productsConfig: productsConfigSlice.reducer,
   quarterlyIncomeCalculator: quarterlyIncomeCalculatorSlice.reducer,
   translations: translationsSlice.reducer,
+  version: versionApi.reducer,
+  dictionariesApi: dictionariesApi.reducer,
 });
 
 const devToolsActionCreators = {
@@ -93,7 +97,11 @@ const store = configureStore({
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
       serializableCheck: false,
-    }),
+    }).concat(
+      authApi.middleware,
+      versionApi.middleware,
+      dictionariesApi.middleware
+    ),
 });
 
 export type RootState = Readonly<ReturnType<typeof rootReducer>>;
