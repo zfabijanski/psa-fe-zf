@@ -1,7 +1,15 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Route, RouteProps } from "react-router-dom";
 import { redirect } from "./utils/router";
 import { LoginState, useInitQuery } from "slices/auth";
+
+const CustomRedirectToLanding = () => {
+  useEffect(() => {
+    redirect("/landing", true);
+  }, []);
+
+  return null;
+};
 
 const ProtectedRoute = ({ component, children, ...rest }: RouteProps) => {
   const { data } = useInitQuery();
@@ -17,8 +25,9 @@ const ProtectedRoute = ({ component, children, ...rest }: RouteProps) => {
       }
     }
 
-    redirect("/landing", true);
-    return { render: () => React.createElement("div", rest) };
+    return {
+      render: () => <CustomRedirectToLanding />,
+    };
   };
 
   return <Route {...rest} {...getChildrenAndRender()} />;

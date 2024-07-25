@@ -60,7 +60,6 @@ function App(props: IProps) {
   useEffect(() => {
     if (isSuccess) {
       replaceReducer(rootReducer);
-      reloadIfOutdatedVersion();
     }
   }, [replaceReducer, isSuccess]);
 
@@ -68,6 +67,7 @@ function App(props: IProps) {
     if (!isLoading) {
       redirect("/", true);
       props.hideFullscreenSpinner();
+      reloadIfOutdatedVersion();
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isLoading]);
