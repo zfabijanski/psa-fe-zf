@@ -52,6 +52,22 @@ export class Api {
     });
   }
 
+  public request = <T = any>(
+    config: AxiosRequestConfig,
+    serverErrorHandlingDisabled?: boolean
+  ) =>
+    this.instance
+      .request<IApiResponse<T>>(config)
+      .catch(
+        this.handleSystemError(
+          config.url || "",
+          this.handleNetworkErrorWhileReading,
+          serverErrorHandlingDisabled
+        )
+      )
+      .then((response) => response.data)
+      .then(this.handleResponse);
+
   public get = <T = any>(
     url: string,
     config?: AxiosRequestConfig,
@@ -208,3 +224,44 @@ export class Api {
     );
   };
 }
+
+export const api = new Api();
+
+export const axiosBaseQuery =
+  (
+    {
+      baseUrl,
+      headers,
+    }: { baseUrl: string; headers?: Record<string, string> } = {
+      baseUrl: "",
+      headers: {},
+    }
+  ) =>
+  async (configOrUrl: string | AxiosRequestConfig) => {
+    if (typeof configOrUrl === "string") {
+      const result = await api.get(configOrUrl);
+      return { data: result.data };
+    }
+
+    const {
+      url,
+      method,
+      data,
+      params,
+      headers: configHeaders,
+      ...rest
+    } = configOrUrl;
+
+    const result = await api.request({
+      url: baseUrl + url,
+      method,
+      data,
+      params,
+      headers: {
+        ...headers,
+        ...configHeaders,
+      },
+      ...rest,
+    });
+    return { data: result.data };
+  };

@@ -5,11 +5,20 @@ import {
   Action,
   ActionCreator,
   combineReducers,
+  Middleware,
+  MiddlewareAPI,
+  isRejected,
+  AnyAction,
 } from "@reduxjs/toolkit";
 import { TypedUseSelectorHook, useDispatch, useSelector } from "react-redux";
 
 // slices
-import { authApi, authSlice } from "slices/auth";
+import {
+  authApi,
+  redirectAndInformAboutLoginErrors,
+  redirectAndInformAboutMultisession,
+  redirectAndInformIfSessionExpired,
+} from "slices/auth";
 import { auxiliaryCalculatorSlice } from "slices/auxiliaryCalculator";
 import { bopDropdownListsSlice } from "slices/bopDropdownLists";
 import { bopSlice, actions as bopActions } from "slices/bop";
@@ -34,8 +43,6 @@ import { illustrationsSlice } from "slices/illustrations";
 import { versionApi } from "utils/version";
 
 export const rootReducer = combineReducers({
-  auth: authSlice.reducer,
-  authApi: authApi.reducer,
   auxiliaryCalculator: auxiliaryCalculatorSlice.reducer,
   bop: bopSlice.reducer,
   bopDropdownLists: bopDropdownListsSlice.reducer,
@@ -57,12 +64,14 @@ export const rootReducer = combineReducers({
   productsConfig: productsConfigSlice.reducer,
   quarterlyIncomeCalculator: quarterlyIncomeCalculatorSlice.reducer,
   translations: translationsSlice.reducer,
-  version: versionApi.reducer,
-  dictionariesApi: dictionariesApi.reducer,
+
+  // API reducers
+  [authApi.reducerPath]: authApi.reducer,
+  [versionApi.reducerPath]: versionApi.reducer,
+  [dictionariesApi.reducerPath]: dictionariesApi.reducer,
 });
 
 const devToolsActionCreators = {
-  auth: authSlice.actions,
   auxiliaryCalculator: auxiliaryCalculatorSlice.actions,
   bop: bopActions,
   bopDropdownLists: bopDropdownListsSlice.actions,
@@ -88,6 +97,39 @@ const devToolsActionCreators = {
   // action creators that return a function
 } as unknown as Record<string, ActionCreator<unknown>>;
 
+export const rtkQueryErrorLogger: Middleware =
+  (api: MiddlewareAPI) => (next) => (action) => {
+    if (isRejected(action)) {
+      const { url, headers } = action.meta?.baseQueryMeta?.response ?? {};
+
+      switch (action.payload?.status) {
+        case 401: {
+          console.warn("401 error");
+          if (url?.includes("/api/auth/login")) {
+            return api.dispatch(
+              redirectAndInformAboutLoginErrors() as unknown as AnyAction
+            );
+          } else if (
+            url.includes("/api/auth/init") &&
+            headers?.get("psaomultisess")
+          ) {
+            return api.dispatch(
+              redirectAndInformAboutMultisession() as unknown as AnyAction
+            );
+          }
+
+          return api.dispatch(
+            redirectAndInformIfSessionExpired() as unknown as AnyAction
+          );
+        }
+        default:
+          return;
+      }
+    }
+
+    return next(action);
+  };
+
 const store = configureStore({
   reducer: rootReducer,
   devTools: {
@@ -100,7 +142,8 @@ const store = configureStore({
     }).concat(
       authApi.middleware,
       versionApi.middleware,
-      dictionariesApi.middleware
+      dictionariesApi.middleware,
+      rtkQueryErrorLogger
     ),
 });
 

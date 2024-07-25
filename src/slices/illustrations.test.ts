@@ -1,5 +1,4 @@
 import { createIllustration } from "testUtils";
-import { signOutSuccess } from "slices/auth";
 import {
   IllustrationsStatus,
   closeIllustrationPreview,
@@ -100,23 +99,6 @@ describe("illustrations reducer", () => {
           ],
         },
         resetIllustrations()
-      )
-    ).toEqual({
-      ...getInitialState(),
-    });
-  });
-
-  it("should handle SignOutSuccess action", () => {
-    expect(
-      illustrations(
-        {
-          ...getInitialState(),
-          items: [
-            createIllustration({ idd_id: 123 }),
-            createIllustration({ idd_id: 456 }),
-          ],
-        },
-        signOutSuccess()
       )
     ).toEqual({
       ...getInitialState(),

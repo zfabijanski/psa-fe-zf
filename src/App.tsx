@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { connect } from "react-redux";
+import { connect, useStore } from "react-redux";
 import styled, { ThemeProvider } from "styled-components";
 import { Normalize } from "styled-normalize";
 import AppRoutes from "./AppRoutes";
@@ -12,11 +12,11 @@ import FullscreenSpinnerContainer from "./components/UI/FullscreenSpinner/Fullsc
 import { Modal } from "./components/UI/Modal";
 import OneTab from "./features/OneTab/OneTab";
 import I18nProvider from "./I18nProvider";
-import { init, useInit } from "./services/init";
+import { useInit } from "./services/init";
 import { initSession } from "./services/login";
 import { getTranslations, Locale, Status } from "slices/translations";
 import { getApiVersion } from "./services/versions";
-import { RootState } from "./AppStore";
+import { RootState, rootReducer } from "./AppStore";
 import GlobalStyles from "./theme/globalStyles";
 import { theme } from "./theme/theme";
 import { IApiError } from "utils/api";
@@ -25,6 +25,8 @@ import {
   showFullscreenSpinner,
 } from "slices/fullscreenSpinner";
 import { redirect } from "utils/router";
+import { useSignOutMutation } from "slices/auth";
+import { reloadIfOutdatedVersion } from "utils/version";
 
 interface IProps {
   getTranslations: (locale: Locale) => void;
@@ -32,7 +34,6 @@ interface IProps {
   getApiVersion: () => void;
   showFullscreenSpinner: () => void;
   hideFullscreenSpinner: () => void;
-  init: () => void;
   translationsStatus: Status;
   dictionariesStatus: Status;
 }
@@ -53,16 +54,27 @@ const AppErrorContainer = styled(AppContainer)`
 
 function App(props: IProps) {
   const { error, isLoading } = useInit();
+  const { replaceReducer } = useStore<RootState>();
+  const [, { isSuccess }] = useSignOutMutation();
+
+  useEffect(() => {
+    if (isSuccess) {
+      replaceReducer(rootReducer);
+      reloadIfOutdatedVersion();
+    }
+  }, [replaceReducer, isSuccess]);
 
   useEffect(() => {
     if (!isLoading) {
       redirect("/", true);
       props.hideFullscreenSpinner();
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isLoading]);
 
   useEffect(() => {
     props.getTranslations(Locale.PL);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
@@ -112,7 +124,6 @@ const mapDispatchToProps = {
   getTranslations,
   getApiVersion,
   initSession,
-  init,
   showFullscreenSpinner,
   hideFullscreenSpinner,
 };

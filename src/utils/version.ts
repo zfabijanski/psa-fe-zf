@@ -50,4 +50,4 @@ export const versionApi = createApi({
   }),
 });
 
-export const { useGetVersionQuery } = versionApi;
+export const { useGetVersionQuery, useLazyGetVersionQuery } = versionApi;

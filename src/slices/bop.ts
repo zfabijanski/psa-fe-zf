@@ -119,9 +119,7 @@ const onStopQuestionnaireConfirm: GenerateSurveyThunksConfig["handlers"]["onStop
             onClick: () => {
               dispatch(showFullscreenSpinner());
               const meetingId = getCurrentMeetingId(getState().meetings);
-              const agentNo = authApi.useGetAgentQuery(undefined, {
-                skip: !getState().auth.info,
-              }).data?.agentNo;
+              const agentNo = authApi.useGetAgentQuery(undefined).data?.agentNo;
               const adequacyId = getState().bop.adequacy_id;
               api
                 .post(getUrl("meeting-denied"), {

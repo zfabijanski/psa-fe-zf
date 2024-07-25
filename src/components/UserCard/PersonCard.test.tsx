@@ -1,14 +1,19 @@
-import { PersonCard, IPersonCard } from "./PersonCard";
+import { PersonCard } from "./PersonCard";
 import { render, screen } from "testUtils";
 
-const defaultProps: IPersonCard = {
-  fullName: "John Doe",
-  image: "https://via.placeholder.com/100",
-  title: "Consultant",
-};
+jest.mock("slices/auth", () => ({
+  ...jest.requireActual("slices/auth"),
+  useGetAgentQuery: () => ({
+    data: {
+      picturePath: "100",
+      pictureApiPath: "https://via.placeholder.com/100",
+      position: "Consultant",
+      fullName: "John Doe",
+    },
+  }),
+}));
 
-const setup = (props: Partial<IPersonCard> = {}) =>
-  render(<PersonCard {...defaultProps} {...props} />);
+const setup = () => render(<PersonCard />);
 
 describe("PersonCard", () => {
   it("should render correctly", () => {
@@ -32,7 +37,16 @@ describe("PersonCard", () => {
   });
 
   it("should render the correct image when image is not provided", () => {
-    setup({ image: undefined });
+    jest.spyOn(require("slices/auth"), "useGetAgentQuery").mockReturnValue({
+      data: {
+        picturePath: "",
+        pictureApiPath: "",
+        position: "title",
+        fullName: "John Doe",
+      },
+    });
+
+    setup();
     expect(
       screen.getByAltText("profile-avatar-placeholder")
     ).toBeInTheDocument();

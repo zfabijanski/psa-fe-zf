@@ -1,5 +1,4 @@
 import { createSlice, createAsyncThunk, PayloadAction } from "@reduxjs/toolkit";
-import { signOutSuccess } from "./auth";
 import { RootState } from "AppStore";
 import {
   hideFullscreenSpinner,
@@ -45,9 +44,6 @@ export const coversConfigSlice = createSlice({
       state.loaded = true;
       state.items = action.payload;
     },
-  },
-  extraReducers(builder) {
-    builder.addCase(signOutSuccess, () => initialState);
   },
 });
 

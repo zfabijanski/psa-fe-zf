@@ -3,13 +3,11 @@ import styled from "styled-components";
 import UserCard from "../../components/UserCard";
 import PageLayout from "../../layouts/PageLayout";
 import { IModalData } from "../../models/Modal";
-import { Brand } from "slices/auth";
 import { maxMeetingsCountExceededModal } from "../../utils/confirmModalFactory";
 import { redirect, RoutePath } from "../../utils/router";
 import TileContainer from "./TileContainer";
 
 interface IProps {
-  brand?: Brand;
   canAddMeeting: boolean;
   showModal: (data: IModalData) => void;
   getMeetingsCounts: () => void;
@@ -69,7 +67,6 @@ class Start extends Component<IProps> {
             onLibraryClick={handleLibraryClick}
             onAboutClick={handleAboutClick}
             onBusinessClick={handleBusinessClick}
-            brand={this.props.brand}
           />
         </Container>
       </PageLayout>

@@ -33,10 +33,8 @@ export const dictionariesApi = createApi({
   endpoints: (builder) => ({
     getDictionaries: builder.query<KeyValuePair<Dictionary>, void>({
       query: () => "/",
-      transformResponse: ({ response }: { response: IDictionaryItem[] }) => {
-        console.log("@@@@@dict", response);
-        return transformDictionary(response);
-      },
+      transformResponse: ({ response }: { response: IDictionaryItem[] }) =>
+        transformDictionary(response),
     }),
   }),
 });
@@ -91,4 +89,5 @@ export const transformDictionary = (dictionaryItems: IDictionaryItem[]) => {
   };
 };
 
-export const { useGetDictionariesQuery } = dictionariesApi;
+export const { useGetDictionariesQuery, useLazyGetDictionariesQuery } =
+  dictionariesApi;

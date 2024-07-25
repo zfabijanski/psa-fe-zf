@@ -15,9 +15,8 @@ import Start from "./Start";
 import { RoutePath } from "utils/router";
 import { resetCalculatorState } from "slices/calculator";
 
-const mapStateToProps = ({ meetings, auth }: RootState) => ({
+const mapStateToProps = ({ meetings }: RootState) => ({
   canAddMeeting: canAddMeeting(meetings),
-  brand: auth.info && auth.info.brand,
 });
 
 const mapDispatchToProps = {

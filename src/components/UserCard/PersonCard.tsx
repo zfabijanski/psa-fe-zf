@@ -1,6 +1,7 @@
 import { FormattedMessage } from "react-intl";
 import styled from "styled-components";
 import profilePlacePlaceholder from "../../assets/newIcons/avatar.svg";
+import { useGetAgentQuery } from "slices/auth";
 
 const ProfilePhotoDiv = styled.div`
   width: 100px;
@@ -36,26 +37,31 @@ const ConsultantTitle = styled.p`
   white-space: pre-wrap;
 `;
 
-export interface IPersonCard {
-  fullName: string;
-  image?: string;
-  title: string;
-}
+export const PersonCard = () => {
+  const {
+    picturePath,
+    pictureApiPath: image,
+    position: title,
+    fullName,
+  } = useGetAgentQuery().data ?? {};
 
-export const PersonCard = (props: IPersonCard) => (
-  <div>
-    <ProfilePhotoDiv>
-      {props.image ? (
-        <ProfilePhotoImg src={props.image} alt="profile-avatar" />
-      ) : (
-        <img src={profilePlacePlaceholder} alt="profile-avatar-placeholder" />
-      )}
-    </ProfilePhotoDiv>
-    <ConsultantFullname>{props.fullName}</ConsultantFullname>
-    <ConsultantTitle>
-      <FormattedMessage id={props.title} />
-    </ConsultantTitle>
-  </div>
-);
+  const hasImage = !!picturePath;
+
+  return (
+    <div>
+      <ProfilePhotoDiv>
+        {hasImage ? (
+          <ProfilePhotoImg src={image} alt="profile-avatar" />
+        ) : (
+          <img src={profilePlacePlaceholder} alt="profile-avatar-placeholder" />
+        )}
+      </ProfilePhotoDiv>
+      <ConsultantFullname>{fullName}</ConsultantFullname>
+      <ConsultantTitle>
+        <FormattedMessage id={title} />
+      </ConsultantTitle>
+    </div>
+  );
+};
 
 export default PersonCard;

@@ -1,6 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { ICoversLimits } from "models/common";
-import { signOutSuccess } from "./auth";
 import { mapProductsConfigToProductCoversLimits } from "mapper/productCoversLimits/productCoversLimits";
 import {
   getProductsConfigRequested,
@@ -31,7 +30,6 @@ export const productCoversLimitsSlice = createSlice({
         state.loaded = true;
         state.items = mapProductsConfigToProductCoversLimits(action.payload);
       })
-      .addCase(getProductsConfigRequested, () => initialState)
-      .addCase(signOutSuccess, () => initialState);
+      .addCase(getProductsConfigRequested, () => initialState);
   },
 });

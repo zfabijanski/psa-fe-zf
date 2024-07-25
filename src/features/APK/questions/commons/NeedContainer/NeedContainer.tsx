@@ -4,12 +4,12 @@ import styled from "styled-components/macro";
 import PruButton from "../../../../../components/UI/PruButton/PruButton";
 import PruCheckbox from "../../../../../components/UI/PruCheckbox/PruCheckbox";
 import { IClientNeed, ISetQuestionValue } from "../../../types";
+import { useProlongUserSessionMutation } from "slices/auth";
 
 interface IProps extends IClientNeed, ISetQuestionValue {
   titleElement: (isExpanded: boolean) => ReactNode;
   isExpandable: boolean;
   expandableElement: ReactNode;
-  prolongUserSession: () => void;
   image: string;
   onExpandChange?: (isExpand: boolean) => void;
   openModal?: () => void;
@@ -17,6 +17,7 @@ interface IProps extends IClientNeed, ISetQuestionValue {
 
 const NeedContainer: FC<IProps> = (props) => {
   const [isExpanded, setIsExpanded] = useState(false);
+  const [prolongUserSession] = useProlongUserSessionMutation();
 
   const toggleIsExpanded = () => {
     if (props.isExpandable) {
@@ -32,7 +33,7 @@ const NeedContainer: FC<IProps> = (props) => {
         props.openModal();
       }
     }
-    props.prolongUserSession();
+    prolongUserSession();
   };
 
   const toggleShouldMoveValueToCalculator = () => {

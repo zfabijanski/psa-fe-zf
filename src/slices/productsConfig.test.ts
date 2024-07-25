@@ -4,7 +4,6 @@ import {
   getProductsConfigSuccess,
   getProductsConfigRequested,
 } from "./productsConfig";
-import { signOutSuccess } from "slices/auth";
 import { createProductConfig } from "testUtils";
 
 const { reducer: productsConfig, getInitialState } = productsConfigSlice;
@@ -34,13 +33,6 @@ describe("productsConfig slice", () => {
     ).toEqual({
       loaded: true,
       items: [createProductConfig()],
-    });
-  });
-
-  it("should handle sign out success action", () => {
-    expect(productsConfig(getInitialState(), signOutSuccess())).toEqual({
-      loaded: false,
-      items: [],
     });
   });
 });

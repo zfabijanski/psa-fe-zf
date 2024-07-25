@@ -1,21 +1,13 @@
 import React from "react";
-import { connect } from "react-redux";
 import { Route, RouteProps } from "react-router-dom";
-import { RootState } from "./AppStore";
 import { redirect } from "./utils/router";
+import { LoginState, useInitQuery } from "slices/auth";
 
-interface IProps {
-  isAuthenticated: boolean;
-}
+const ProtectedRoute = ({ component, children, ...rest }: RouteProps) => {
+  const { data } = useInitQuery();
 
-const ProtectedRoute = ({
-  component,
-  children,
-  isAuthenticated,
-  ...rest
-}: IProps & RouteProps) => {
   const getChildrenAndRender = (): Partial<RouteProps> => {
-    if (isAuthenticated) {
+    if (data?.loginState === LoginState.Success) {
       if (children) {
         return { children };
       } else if (component) {
@@ -26,14 +18,10 @@ const ProtectedRoute = ({
     }
 
     redirect("/landing", true);
-    return {};
+    return { render: () => React.createElement("div", rest) };
   };
 
   return <Route {...rest} {...getChildrenAndRender()} />;
 };
 
-const mapStateToProps = ({ auth }: RootState) => ({
-  isAuthenticated: !!auth.info,
-});
-
-export default connect(mapStateToProps)(ProtectedRoute);
+export default ProtectedRoute;

@@ -1,44 +1,41 @@
-import { ThunkResult } from "../AppStore";
-import { reloadIfOutdatedVersion, useGetVersionQuery } from "../utils/version";
+import { useAppDispatch } from "../AppStore";
+import { useLazyGetVersionQuery } from "../utils/version";
 import { loadDropdownDictionaries } from "slices/bopDropdownLists";
-import { useGetDictionariesQuery } from "slices/dictionaries";
-import useSWR from "swr";
+import { useLazyGetDictionariesQuery } from "slices/dictionaries";
 import { useEffect } from "react";
-import { useGetAgentQuery, useInitQuery } from "slices/auth";
+import { useLazyGetAgentQuery, useInitQuery } from "slices/auth";
 import { IApiError } from "utils/api";
 
-export const init = (): ThunkResult => (dispatch) => {
-  reloadIfOutdatedVersion();
-
-  return Promise.all([dispatch(loadDropdownDictionaries())]);
-};
-
-const fetcher = (url: string) => fetch(url).then((res) => res.json());
-
 export const useInit = (): { isLoading?: boolean; error?: IApiError } => {
+  const dispatch = useAppDispatch();
   const initResponse = useInitQuery();
-  const agentResponse = useGetAgentQuery();
-  const getApiVersion = useGetVersionQuery();
-  const dictionariesResponse = useGetDictionariesQuery();
+  const isLoggedIn = initResponse.isSuccess;
 
-  const adequacyListValuesResponse = useSWR(
-    "/psao/api/adequacy/list-values",
-    fetcher
+  const [callGetAgent, agentResponse] = useLazyGetAgentQuery();
+  const [callGetVersion, getApiVersion] = useLazyGetVersionQuery();
+  const [callGetDictionaries, dictionariesResponse] =
+    useLazyGetDictionariesQuery();
+
+  useEffect(() => {
+    if (isLoggedIn) {
+      callGetAgent();
+      callGetVersion();
+      callGetDictionaries();
+
+      dispatch(loadDropdownDictionaries());
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isLoggedIn]);
+
+  const isLoading = [initResponse, dictionariesResponse, agentResponse].some(
+    (response) => !response.isSuccess
   );
-
-  const isLoading = [
-    initResponse,
-    dictionariesResponse,
-    agentResponse,
-    adequacyListValuesResponse,
-  ].some((response) => response.isLoading);
 
   const responseError = [
     initResponse,
     dictionariesResponse,
     agentResponse,
-    adequacyListValuesResponse,
-  ].find((response) => response.error)?.error;
+  ].find((response) => response.error)?.error as unknown as IApiError;
 
   useEffect(() => {
     if (getApiVersion.data) {

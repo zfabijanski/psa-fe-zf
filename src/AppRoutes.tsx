@@ -39,7 +39,6 @@ const AppRoutes: React.FC<IProps> = (props) => {
     routeComponentProps: RouteChildrenProps<any>
   ): React.ReactNode => {
     const state = routeComponentProps.location.state as Record<string, unknown>;
-    console.log("#@#@#@#@#@", state, state.fromApp);
 
     return !!state && !!state.fromApp ? <Landing /> : <Redirect to="/" />;
   };

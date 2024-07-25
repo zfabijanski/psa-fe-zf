@@ -9,7 +9,6 @@ import {
 } from "features/Calculator/utils";
 import { CalculationIdType } from "features/Products/types";
 import { CalculationState, CalculationStatus } from "models/calculator";
-import { signOutSuccess } from "./auth";
 import { RootState } from "AppStore";
 
 const initialCalculationState: CalculationState = {
@@ -142,9 +141,6 @@ export const calculatorSlice = createSlice({
     resetCalculatorState() {
       return initialState;
     },
-  },
-  extraReducers(builder) {
-    builder.addCase(signOutSuccess, () => initialState);
   },
 });
 
